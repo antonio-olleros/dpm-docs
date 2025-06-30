@@ -10,4 +10,4 @@ pages:
   - poetry run mkdocs build --config-file dpm-docs/mkdocs.yml --site-dir public
   artifacts:
     paths:
-    - public
+    - dpm-docs/public
