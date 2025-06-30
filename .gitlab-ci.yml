@@ -7,7 +7,7 @@ before_script:
 pages:
   stage: deploy
   script:
-  - poetry run mkdocs build --config-file dpm-docs/mkdocs.yml --site-dir public
+  - poetry run mkdocs build --config-file dpm-docs/mkdocs.yml --site-dir ../public
   artifacts:
     paths:
-    - dpm-docs/public
+    - public
