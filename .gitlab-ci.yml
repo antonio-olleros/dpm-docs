@@ -1,7 +1,7 @@
 image: python:3.13
 
 before_script:
-  - pipx install poetry
+  - pip install poetry
   - poetry install
 
 pages:
