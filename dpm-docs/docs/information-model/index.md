@@ -4,12 +4,12 @@ The Information Model forms the conceptual foundation of DPM-XL, defining the da
 
 ## Core Concepts
 
-The Information Model centers around four fundamental concepts:
+The Information Model deals with four fundamental concepts:
 
 ```mermaid
 graph TB
     OP[Operations] --> ART[Language Artifacts]
-    ART --> SC[Scalars]
+    ART --> SC[Scalars2]
     ART --> SS[Scalar Sets]  
     ART --> RS[Recordsets]
     
