@@ -1,0 +1,14 @@
+image: python:3.13
+
+before_script:
+  - pipx install poetry
+  - poetry install
+
+pages:
+  stage: deploy
+  script:
+  - cd dpm-docs
+  - mkdocs build --site-dir public
+  artifacts:
+    paths:
+    - public
