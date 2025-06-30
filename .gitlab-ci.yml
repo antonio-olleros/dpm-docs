@@ -2,7 +2,7 @@ image: python:3.13
 
 before_script:
   - pip install poetry
-  - poetry install
+  - poetry install --no-root
 
 pages:
   stage: deploy
