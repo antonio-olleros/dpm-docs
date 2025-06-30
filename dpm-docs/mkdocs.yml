@@ -1,0 +1,131 @@
+site_name: DPM Expression Language (DPM-XL) Documentation
+site_description: Comprehensive documentation for the Data Point Model Expression Language
+site_author: DPM-XL Standards Committee
+repo_url: https://github.com/your-org/dpm-xl-docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Introduction:
+    - Overview: introduction/index.md
+    - Why DPM-XL: introduction/why.md
+    - DPM-XL vs DPM-ML: introduction/dpm-xl-vs-dpm-ml.md
+    - Formalization Approach: introduction/approach.md
+  - Information Model:
+    - Overview: information-model/index.md
+    - Operations: information-model/operations.md
+    - Language Artifacts:
+      - Overview: information-model/artifacts/index.md
+      - Scalars: information-model/artifacts/scalars.md
+      - Scalar Sets: information-model/artifacts/scalar-sets.md
+      - Recordsets: information-model/artifacts/recordsets.md
+    - Data Types: information-model/data-types.md
+    - Examples: information-model/examples.md
+  - Language Specification:
+    - Overview: language-specification/index.md
+    - Data Selection: language-specification/data-selection.md
+    - Null Handling: language-specification/null-handling.md
+    - Reserved Words: language-specification/reserved-words.md
+  - Operators:
+    - Overview: operators/index.md
+    - Common Behaviors: operators/common-behaviors.md
+    - Selection:
+      - Overview: operators/selection/index.md
+      - Selection Operator: operators/selection/selection.md
+      - With Operator: operators/selection/with.md
+    - Numeric:
+      - Overview: operators/numeric/index.md
+      - Unary Operators: operators/numeric/unary.md
+      - Binary Operators: operators/numeric/binary.md
+    - Comparison:
+      - Overview: operators/comparison/index.md
+      - Operators: operators/comparison/operators.md
+    - Logical:
+      - Overview: operators/logical/index.md
+      - Operators: operators/logical/operators.md
+    - Aggregate:
+      - Overview: operators/aggregate/index.md
+      - Operators: operators/aggregate/operators.md
+    - Conditional:
+      - Overview: operators/conditional/index.md
+      - Operators: operators/conditional/operators.md
+    - String:
+      - Overview: operators/string/index.md
+      - Operators: operators/string/operators.md
+    - Time:
+      - Overview: operators/time/index.md
+      - Operators: operators/time/operators.md
+    - Clause:
+      - Overview: operators/clause/index.md
+      - Operators: operators/clause/operators.md
+  - DPM-ML:
+    - Overview: dpm-ml/index.md
+    - Metamodel: dpm-ml/metamodel.md
+    - Tree Representation: dpm-ml/tree-representation.md
+    - Operands Representation: dpm-ml/operands.md
+    - Scripts: dpm-ml/scripts.md
+  - Reference:
+    - Overview: reference/index.md
+    - Grammar: reference/grammar.md
+    - Operator Summary: reference/operator-summary.md
+    - Data Type Reference: reference/data-type-reference.md
+  - Examples:
+    - Overview: examples/index.md
+    - Basic Examples: examples/basic-examples.md
+    - Advanced Examples: examples/advanced-examples.md
+    - Edge Cases: examples/edge-cases.md
