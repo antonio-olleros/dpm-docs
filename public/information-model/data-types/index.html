@@ -1,0 +1,1969 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Comprehensive documentation for the Data Point Model Expression Language" name="description"/>
+<meta content="DPM-XL Standards Committee" name="author"/>
+<link href="../artifacts/recordsets/" rel="prev"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
+<title>Data Types - DPM Expression Language (DPM-XL) Documentation</title>
+<link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#data-types">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="DPM Expression Language (DPM-XL) Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="DPM Expression Language (DPM-XL) Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DPM Expression Language (DPM-XL) Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Data Types
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://gitlab.com/aollerosr/dpm-xl-docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../introduction/">
+          
+  
+  
+  Introduction
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Information Model
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../language-specification/index.md">
+          
+  
+  
+  Language Specification
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../operators/index.md">
+          
+  
+  
+  Operators
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../dpm-ml/index.md">
+          
+  
+  
+  DPM-ML
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../reference/index.md">
+          
+  
+  
+  Reference
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../examples/index.md">
+          
+  
+  
+  Examples
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DPM Expression Language (DPM-XL) Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="DPM Expression Language (DPM-XL) Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    DPM Expression Language (DPM-XL) Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://gitlab.com/aollerosr/dpm-xl-docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/why/">
+<span class="md-ellipsis">
+    Why DPM-XL
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/dpm-xl-vs-dpm-ml/">
+<span class="md-ellipsis">
+    DPM-XL vs DPM-ML
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/approach/">
+<span class="md-ellipsis">
+    Formalization Approach
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    Information Model
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Information Model
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../operations/">
+<span class="md-ellipsis">
+    Operations
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+<span class="md-ellipsis">
+    Language Artifacts
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Language Artifacts
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../artifacts/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../artifacts/scalars/">
+<span class="md-ellipsis">
+    Scalars
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../artifacts/scalar-sets/">
+<span class="md-ellipsis">
+    Scalar Sets
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../artifacts/recordsets/">
+<span class="md-ellipsis">
+    Recordsets
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Data Types
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Data Types
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-hierarchy">
+<span class="md-ellipsis">
+      Type Hierarchy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-data-types">
+<span class="md-ellipsis">
+      Core Data Types
+    </span>
+</a>
+<nav aria-label="Core Data Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string">
+<span class="md-ellipsis">
+      String
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#number">
+<span class="md-ellipsis">
+      Number
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integer">
+<span class="md-ellipsis">
+      Integer
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boolean">
+<span class="md-ellipsis">
+      Boolean
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#temporal-types">
+<span class="md-ellipsis">
+      Temporal Types
+    </span>
+</a>
+<nav aria-label="Temporal Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-interval">
+<span class="md-ellipsis">
+      Time Interval
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-subtype-of-time-interval">
+<span class="md-ellipsis">
+      Date (subtype of Time Interval)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-period-subtype-of-time-interval">
+<span class="md-ellipsis">
+      Time Period (subtype of Time Interval)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duration">
+<span class="md-ellipsis">
+      Duration
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#category-types">
+<span class="md-ellipsis">
+      Category Types
+    </span>
+</a>
+<nav aria-label="Category Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#category-items">
+<span class="md-ellipsis">
+      Category Items
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subcategories">
+<span class="md-ellipsis">
+      Subcategories
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-correspondence-with-dpm-types">
+<span class="md-ellipsis">
+      Type Correspondence with DPM Types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-casting">
+<span class="md-ellipsis">
+      Type Casting
+    </span>
+</a>
+<nav aria-label="Type Casting" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casting-matrix">
+<span class="md-ellipsis">
+      Casting Matrix
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casting-examples">
+<span class="md-ellipsis">
+      Casting Examples
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#null-handling">
+<span class="md-ellipsis">
+      Null Handling
+    </span>
+</a>
+<nav aria-label="Null Handling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#universal-null">
+<span class="md-ellipsis">
+      Universal Null
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-special-case">
+<span class="md-ellipsis">
+      String Special Case
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#three-valued-logic">
+<span class="md-ellipsis">
+      Three-Valued Logic
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interval-arithmetic">
+<span class="md-ellipsis">
+      Interval Arithmetic
+    </span>
+</a>
+<nav aria-label="Interval Arithmetic" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interval-representation">
+<span class="md-ellipsis">
+      Interval Representation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interval-operations">
+<span class="md-ellipsis">
+      Interval Operations
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+<span class="md-ellipsis">
+      Example
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#writing-scalar-literals">
+<span class="md-ellipsis">
+      Writing Scalar Literals
+    </span>
+</a>
+<nav aria-label="Writing Scalar Literals" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-literals">
+<span class="md-ellipsis">
+      String Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#numeric-literals">
+<span class="md-ellipsis">
+      Numeric Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boolean-literals">
+<span class="md-ellipsis">
+      Boolean Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#temporal-literals">
+<span class="md-ellipsis">
+      Temporal Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-object-literals">
+<span class="md-ellipsis">
+      DPM Object Literals
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples.md">
+<span class="md-ellipsis">
+    Examples
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Language Specification
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Language Specification
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../language-specification/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../language-specification/data-selection.md">
+<span class="md-ellipsis">
+    Data Selection
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../language-specification/null-handling.md">
+<span class="md-ellipsis">
+    Null Handling
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../language-specification/reserved-words.md">
+<span class="md-ellipsis">
+    Reserved Words
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Operators
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/common-behaviors.md">
+<span class="md-ellipsis">
+    Common Behaviors
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Selection
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Selection
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/selection/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/selection/selection.md">
+<span class="md-ellipsis">
+    Selection Operator
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/selection/with.md">
+<span class="md-ellipsis">
+    With Operator
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Numeric
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            Numeric
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/numeric/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/numeric/unary.md">
+<span class="md-ellipsis">
+    Unary Operators
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/numeric/binary.md">
+<span class="md-ellipsis">
+    Binary Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Comparison
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            Comparison
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/comparison/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/comparison/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Logical
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            Logical
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/logical/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/logical/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Aggregate
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_7">
+<span class="md-nav__icon md-icon"></span>
+            Aggregate
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/aggregate/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/aggregate/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Conditional
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_8">
+<span class="md-nav__icon md-icon"></span>
+            Conditional
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/conditional/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/conditional/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+<span class="md-ellipsis">
+    String
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_9">
+<span class="md-nav__icon md-icon"></span>
+            String
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/string/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/string/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Time
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_10">
+<span class="md-nav__icon md-icon"></span>
+            Time
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/time/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/time/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+<span class="md-ellipsis">
+    Clause
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_11">
+<span class="md-nav__icon md-icon"></span>
+            Clause
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/clause/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operators/clause/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    DPM-ML
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            DPM-ML
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dpm-ml/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dpm-ml/metamodel.md">
+<span class="md-ellipsis">
+    Metamodel
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dpm-ml/tree-representation.md">
+<span class="md-ellipsis">
+    Tree Representation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dpm-ml/operands.md">
+<span class="md-ellipsis">
+    Operands Representation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../dpm-ml/scripts.md">
+<span class="md-ellipsis">
+    Scripts
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Reference
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/grammar.md">
+<span class="md-ellipsis">
+    Grammar
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/operator-summary.md">
+<span class="md-ellipsis">
+    Operator Summary
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/data-type-reference.md">
+<span class="md-ellipsis">
+    Data Type Reference
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Examples
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/basic-examples.md">
+<span class="md-ellipsis">
+    Basic Examples
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/advanced-examples.md">
+<span class="md-ellipsis">
+    Advanced Examples
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/edge-cases.md">
+<span class="md-ellipsis">
+    Edge Cases
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-hierarchy">
+<span class="md-ellipsis">
+      Type Hierarchy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-data-types">
+<span class="md-ellipsis">
+      Core Data Types
+    </span>
+</a>
+<nav aria-label="Core Data Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string">
+<span class="md-ellipsis">
+      String
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#number">
+<span class="md-ellipsis">
+      Number
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integer">
+<span class="md-ellipsis">
+      Integer
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boolean">
+<span class="md-ellipsis">
+      Boolean
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#temporal-types">
+<span class="md-ellipsis">
+      Temporal Types
+    </span>
+</a>
+<nav aria-label="Temporal Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-interval">
+<span class="md-ellipsis">
+      Time Interval
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#date-subtype-of-time-interval">
+<span class="md-ellipsis">
+      Date (subtype of Time Interval)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#time-period-subtype-of-time-interval">
+<span class="md-ellipsis">
+      Time Period (subtype of Time Interval)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duration">
+<span class="md-ellipsis">
+      Duration
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#category-types">
+<span class="md-ellipsis">
+      Category Types
+    </span>
+</a>
+<nav aria-label="Category Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#category-items">
+<span class="md-ellipsis">
+      Category Items
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subcategories">
+<span class="md-ellipsis">
+      Subcategories
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-correspondence-with-dpm-types">
+<span class="md-ellipsis">
+      Type Correspondence with DPM Types
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#type-casting">
+<span class="md-ellipsis">
+      Type Casting
+    </span>
+</a>
+<nav aria-label="Type Casting" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casting-matrix">
+<span class="md-ellipsis">
+      Casting Matrix
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casting-examples">
+<span class="md-ellipsis">
+      Casting Examples
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#null-handling">
+<span class="md-ellipsis">
+      Null Handling
+    </span>
+</a>
+<nav aria-label="Null Handling" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#universal-null">
+<span class="md-ellipsis">
+      Universal Null
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-special-case">
+<span class="md-ellipsis">
+      String Special Case
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#three-valued-logic">
+<span class="md-ellipsis">
+      Three-Valued Logic
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interval-arithmetic">
+<span class="md-ellipsis">
+      Interval Arithmetic
+    </span>
+</a>
+<nav aria-label="Interval Arithmetic" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interval-representation">
+<span class="md-ellipsis">
+      Interval Representation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interval-operations">
+<span class="md-ellipsis">
+      Interval Operations
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+<span class="md-ellipsis">
+      Example
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#writing-scalar-literals">
+<span class="md-ellipsis">
+      Writing Scalar Literals
+    </span>
+</a>
+<nav aria-label="Writing Scalar Literals" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-literals">
+<span class="md-ellipsis">
+      String Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#numeric-literals">
+<span class="md-ellipsis">
+      Numeric Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#boolean-literals">
+<span class="md-ellipsis">
+      Boolean Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#temporal-literals">
+<span class="md-ellipsis">
+      Temporal Literals
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-object-literals">
+<span class="md-ellipsis">
+      DPM Object Literals
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://gitlab.com/aollerosr/dpm-xl-docs/edit/main/docs/information-model/data-types.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<h1 id="data-types">Data Types<a class="headerlink" href="#data-types" title="Permanent link">¶</a></h1>
+<p>DPM-XL employs a carefully designed type system that balances expressiveness with operational efficiency. The guiding principle is: <strong>Create only a data type if it has different behavior from other data types with at least one operator</strong>.</p>
+<h2 id="type-hierarchy">Type Hierarchy<a class="headerlink" href="#type-hierarchy" title="Permanent link">¶</a></h2>
+<div class="mermaid">graph TD
+    DT[DPM-XL Data Types] --&gt; NUM[Numeric Types]
+    DT --&gt; STR[String]
+    DT --&gt; TIME[Temporal Types]
+    DT --&gt; BOOL[Boolean]
+    DT --&gt; CAT[Category Types]
+
+    NUM --&gt; NUMBER[Number]
+    NUM --&gt; INTEGER[Integer]
+
+    TIME --&gt; TINT[Time Interval]
+    TIME --&gt; DATE[Date]
+    TIME --&gt; TPER[Time Period]
+    TIME --&gt; DUR[Duration]
+
+    CAT --&gt; ITEM[Category Items]
+    CAT --&gt; SUBCAT[Subcategories]
+
+    style DT fill:#e3f2fd
+    style NUM fill:#f3e5f5
+    style TIME fill:#e8f5e8
+    style CAT fill:#fff3e0
+</div>
+<h2 id="core-data-types">Core Data Types<a class="headerlink" href="#core-data-types" title="Permanent link">¶</a></h2>
+<h3 id="string"><strong>String</strong><a class="headerlink" href="#string" title="Permanent link">¶</a></h3>
+<p>Sequence of alphanumeric characters of any length.</p>
+<p><strong>Characteristics:</strong>
+- Variable length (no predefined limit)
+- Unicode support for international characters
+- Empty string is valid and equivalent to null</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>"Hello World"
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>"Asset Class A"
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>""                    # Empty string
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>'Alternative syntax'  # Single quotes also valid
+</code></pre></div></p>
+<h3 id="number"><strong>Number</strong><a class="headerlink" href="#number" title="Permanent link">¶</a></h3>
+<p>Rational number of any magnitude and precision, used as approximation of real numbers.</p>
+<p><strong>Characteristics:</strong>
+- Arbitrary precision and magnitude
+- Can be treated as points or intervals
+- Intervals defined as center ± radius (c ± r)
+- Radius calculated as 10^(-p)/2 where p is precision</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>3.14159
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>-42.7
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>1000000.001
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>0.0001
+</code></pre></div></p>
+<h3 id="integer"><strong>Integer</strong><a class="headerlink" href="#integer" title="Permanent link">¶</a></h3>
+<p>Positive and negative integer numbers and zero.</p>
+<p><strong>Characteristics:</strong>
+- Subtype of Number
+- Can be treated as intervals like Numbers
+- Whole numbers only (no decimal component)</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>42
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>-17
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>0
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>1000000
+</code></pre></div></p>
+<h3 id="boolean"><strong>Boolean</strong><a class="headerlink" href="#boolean" title="Permanent link">¶</a></h3>
+<p>Logical binary state meaning either "true" or "false".</p>
+<p><strong>Characteristics:</strong>
+- Only two valid values: <code>true</code> and <code>false</code>
+- Supports three-valued logic with null
+- Used in conditional and logical operations</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>true
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>false
+</code></pre></div></p>
+<h2 id="temporal-types">Temporal Types<a class="headerlink" href="#temporal-types" title="Permanent link">¶</a></h2>
+<h3 id="time-interval"><strong>Time Interval</strong><a class="headerlink" href="#time-interval" title="Permanent link">¶</a></h3>
+<p>Denotes time intervals of any duration expressed with precision.</p>
+<p><strong>Characteristics:</strong>
+- Represents intervening time between two time points
+- Follows ISO 8601 standard
+- Can have various precisions (year, month, day, etc.)</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>#2023-01-01/2023-12-31#    # Full year interval
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>#2023Q1/2023Q4#            # Multi-quarter interval
+</code></pre></div></p>
+<h3 id="date-subtype-of-time-interval"><strong>Date</strong> <em>(subtype of Time Interval)</em><a class="headerlink" href="#date-subtype-of-time-interval" title="Permanent link">¶</a></h3>
+<p>Time points expressed at any precision - intervals of zero duration.</p>
+<p><strong>Characteristics:</strong>
+- Includes all parts needed for desired precision
+- Can represent year, month, day, hour, minute, second
+- Always represents a specific point in time</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>#2023-12-31#              # Specific date
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>#2023-12-31T14:30:00#     # Date with time
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>#2023#                    # Year precision
+</code></pre></div></p>
+<h3 id="time-period-subtype-of-time-interval"><strong>Time Period</strong> <em>(subtype of Time Interval)</em><a class="headerlink" href="#time-period-subtype-of-time-interval" title="Permanent link">¶</a></h3>
+<p>Non-overlapping time intervals with regular duration.</p>
+<p><strong>Characteristics:</strong>
+- Regular periods: years, quarters, months, weeks, days
+- Composite values with duration type indicator
+- Explicit indication of period type</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>#2023M04#                 # April 2023 (month)
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>#2023Q2#                  # Second quarter 2023
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>#2023W15#                 # Week 15 of 2023
+</code></pre></div></p>
+<h3 id="duration"><strong>Duration</strong><a class="headerlink" href="#duration" title="Permanent link">¶</a></h3>
+<p>Represents a length of time (not bound to specific dates).</p>
+<p><strong>Characteristics:</strong>
+- Follows ISO 8601 duration format
+- P[n]Y[n]M[n]DT[n]H[n]M[n]S pattern
+- Can represent years, months, days, hours, minutes, seconds</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>#P1Y#                     # 1 year
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>#P3M#                     # 3 months  
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>#P1Y6M#                   # 1 year and 6 months
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>#PT2H30M#                 # 2 hours 30 minutes
+</code></pre></div></p>
+<h2 id="category-types">Category Types<a class="headerlink" href="#category-types" title="Permanent link">¶</a></h2>
+<h3 id="category-items"><strong>Category Items</strong><a class="headerlink" href="#category-items" title="Permanent link">¶</a></h3>
+<p>Reference to the code of a Category Item in the DPM model.</p>
+<p><strong>Characteristics:</strong>
+- Points to specific items in DPM taxonomies
+- Provides type-safe references to enumerated values
+- Enables validation against official code lists</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>[item, eba_RT:x11]
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>[item, "asset_class_equity"]
+</code></pre></div></p>
+<h3 id="subcategories"><strong>Subcategories</strong><a class="headerlink" href="#subcategories" title="Permanent link">¶</a></h3>
+<p>Reference to the code of a Subcategory in the DPM model.</p>
+<p><strong>Characteristics:</strong>
+- References collections of related category items
+- Enables set-based operations on predefined groups
+- Provides centralized maintenance of code lists</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>[subcategory, eba_CU:iso_currencies]
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>[subcategory, "eu_member_states"]
+</code></pre></div></p>
+<h2 id="type-correspondence-with-dpm-types">Type Correspondence with DPM Types<a class="headerlink" href="#type-correspondence-with-dpm-types" title="Permanent link">¶</a></h2>
+<p>DPM-XL provides a simplified type system that maps to the more granular DPM data types:</p>
+<table>
+<thead>
+<tr>
+<th>DPM Code</th>
+<th>DPM Name</th>
+<th>DPM-XL Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td>integer</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>decimal</td>
+<td>Number</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>string (non empty)</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><code>t</code></td>
+<td>true</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><code>dt</code></td>
+<td>date time</td>
+<td>Date</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>date</td>
+<td>Date</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>enumeration</td>
+<td>Category Items</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>monetary</td>
+<td>Number</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>percentage</td>
+<td>Number</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>URI</td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>ordinals</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><code>es</code></td>
+<td>string (including empty)</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<p>This mapping enables DPM-XL to work with existing DPM models while maintaining a simpler type system for operations.</p>
+<h2 id="type-casting">Type Casting<a class="headerlink" href="#type-casting" title="Permanent link">¶</a></h2>
+<p>Type conversion between data types follows explicit rules:</p>
+<h3 id="casting-matrix">Casting Matrix<a class="headerlink" href="#casting-matrix" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>From / To</th>
+<th>String</th>
+<th>Number</th>
+<th>Integer</th>
+<th>Time Interval</th>
+<th>Date</th>
+<th>Time Period</th>
+<th>Duration</th>
+<th>Boolean</th>
+<th>Item</th>
+<th>Subcategory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>String</strong></td>
+<td>-</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>Explicit</td>
+</tr>
+<tr>
+<td><strong>Number</strong></td>
+<td>Implicit</td>
+<td>-</td>
+<td>Explicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Integer</strong></td>
+<td>Implicit</td>
+<td>Implicit</td>
+<td>-</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Time Interval</strong></td>
+<td>Implicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>-</td>
+<td>Explicit</td>
+<td>Explicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>Implicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>Implicit</td>
+<td>-</td>
+<td>Explicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Time Period</strong></td>
+<td>Implicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>Implicit</td>
+<td>❌</td>
+<td>-</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>Implicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>-</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Boolean</strong></td>
+<td>Implicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>-</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Item</strong></td>
+<td>Implicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>-</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Subcategory</strong></td>
+<td>Implicit</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong>
+- <strong>Implicit</strong>: Automatic conversion when needed
+- <strong>Explicit</strong>: Requires explicit cast operator
+- <strong>❌</strong>: Not possible</p>
+<h3 id="casting-examples">Casting Examples<a class="headerlink" href="#casting-examples" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>cast(100, "string")           # "100"
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>cast("3.14", number)          # 3.14
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>cast(5, number)               # 5.0 (implicit)
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a>cast("2023-12-31", date)      # #2023-12-31#
+</code></pre></div>
+<h2 id="null-handling">Null Handling<a class="headerlink" href="#null-handling" title="Permanent link">¶</a></h2>
+<p>All data types support the special value <code>null</code>:</p>
+<h3 id="universal-null"><strong>Universal Null</strong><a class="headerlink" href="#universal-null" title="Permanent link">¶</a></h3>
+<ul>
+<li>Every data type includes <code>null</code> as a valid value</li>
+<li>Represents "no value", "absence of value", or "missing value"</li>
+<li>The same <code>null</code> value exists across all types</li>
+</ul>
+<h3 id="string-special-case"><strong>String Special Case</strong><a class="headerlink" href="#string-special-case" title="Permanent link">¶</a></h3>
+<p>For String data type, <code>null</code> is equivalent to empty string:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>null = ""         # true in string context
+</code></pre></div></p>
+<h3 id="three-valued-logic"><strong>Three-Valued Logic</strong><a class="headerlink" href="#three-valued-logic" title="Permanent link">¶</a></h3>
+<p>Boolean operations with null follow three-valued logic:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>true and null     # null
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>false or null     # null
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>null = null       # null
+</code></pre></div></p>
+<h2 id="interval-arithmetic">Interval Arithmetic<a class="headerlink" href="#interval-arithmetic" title="Permanent link">¶</a></h2>
+<p>Numeric types (Number and Integer) support interval arithmetic:</p>
+<h3 id="interval-representation"><strong>Interval Representation</strong><a class="headerlink" href="#interval-representation" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Center</strong>: The input value</li>
+<li><strong>Radius</strong>: Calculated as 10^(-p)/2 where p is precision</li>
+<li><strong>Range</strong>: [center - radius, center + radius]</li>
+</ul>
+<h3 id="interval-operations"><strong>Interval Operations</strong><a class="headerlink" href="#interval-operations" title="Permanent link">¶</a></h3>
+<p>Operations on intervals follow specific rules:
+- <strong>Addition</strong>: centers add, radii add
+- <strong>Subtraction</strong>: centers subtract, radii add<br/>
+- <strong>Multiplication</strong>: complex radius calculation
+- <strong>Comparison</strong>: based on interval overlap</p>
+<h3 id="example"><strong>Example</strong><a class="headerlink" href="#example" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a># Value 100 with precision 1 becomes interval 100 ± 0.05
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a># Range: [99.95, 100.05]
+</code></pre></div>
+<h2 id="writing-scalar-literals">Writing Scalar Literals<a class="headerlink" href="#writing-scalar-literals" title="Permanent link">¶</a></h2>
+<h3 id="string-literals"><strong>String Literals</strong><a class="headerlink" href="#string-literals" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>"Double quotes"
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>'Single quotes'
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a>"String with spaces and symbols: @#$%"
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>""                    # Empty string
+</code></pre></div>
+<h3 id="numeric-literals"><strong>Numeric Literals</strong><a class="headerlink" href="#numeric-literals" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>42                    # Integer
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>-17                   # Negative integer
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>3.14159              # Number
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>-0.5                 # Negative number
+</code></pre></div>
+<h3 id="boolean-literals"><strong>Boolean Literals</strong><a class="headerlink" href="#boolean-literals" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>true
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>false
+</code></pre></div>
+<h3 id="temporal-literals"><strong>Temporal Literals</strong><a class="headerlink" href="#temporal-literals" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>#2023-12-31#         # Date
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>#2023Q4#             # Time period (quarter)
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>#2023M12#            # Time period (month)
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>#P1Y6M#              # Duration (1 year 6 months)
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>#2021-01-01/2021-12-31# # Time interval
+</code></pre></div>
+<h3 id="dpm-object-literals"><strong>DPM Object Literals</strong><a class="headerlink" href="#dpm-object-literals" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>[item, eba_RT:x11]
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>[subcategory, eba_CU:iso_currencies]
+</code></pre></div>
+<hr/>
+<div class="admonition tip">
+<p class="admonition-title">Type Design Philosophy</p>
+<p>The DPM-XL type system prioritizes:</p>
+<ol>
+<li><strong>Operational Distinctness</strong> - Types exist only when they behave differently</li>
+<li><strong>Business Relevance</strong> - Types map to concepts business users understand  </li>
+<li><strong>Implementation Efficiency</strong> - Simple enough for efficient execution</li>
+<li><strong>Regulatory Completeness</strong> - Covers all scenarios needed for regulatory reporting</li>
+</ol>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

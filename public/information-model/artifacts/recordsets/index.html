@@ -1,0 +1,2040 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Comprehensive documentation for the Data Point Model Expression Language" name="description"/>
+<meta content="DPM-XL Standards Committee" name="author"/>
+<link href="../scalar-sets/" rel="prev"/>
+<link href="../../data-types/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
+<title>Recordsets - DPM Expression Language (DPM-XL) Documentation</title>
+<link href="../../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#recordsets">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="DPM Expression Language (DPM-XL) Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="DPM Expression Language (DPM-XL) Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DPM Expression Language (DPM-XL) Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Recordsets
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://gitlab.com/aollerosr/dpm-xl-docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../introduction/">
+          
+  
+  
+  Introduction
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../">
+          
+  
+  
+  Information Model
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../language-specification/index.md">
+          
+  
+  
+  Language Specification
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../operators/index.md">
+          
+  
+  
+  Operators
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../dpm-ml/index.md">
+          
+  
+  
+  DPM-ML
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../reference/index.md">
+          
+  
+  
+  Reference
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../examples/index.md">
+          
+  
+  
+  Examples
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DPM Expression Language (DPM-XL) Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="DPM Expression Language (DPM-XL) Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    DPM Expression Language (DPM-XL) Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://gitlab.com/aollerosr/dpm-xl-docs" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitLab
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/why/">
+<span class="md-ellipsis">
+    Why DPM-XL
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/dpm-xl-vs-dpm-ml/">
+<span class="md-ellipsis">
+    DPM-XL vs DPM-ML
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/approach/">
+<span class="md-ellipsis">
+    Formalization Approach
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    Information Model
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            Information Model
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operations/">
+<span class="md-ellipsis">
+    Operations
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+<span class="md-ellipsis">
+    Language Artifacts
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Language Artifacts
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../scalars/">
+<span class="md-ellipsis">
+    Scalars
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../scalar-sets/">
+<span class="md-ellipsis">
+    Scalar Sets
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Recordsets
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Recordsets
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definition">
+<span class="md-ellipsis">
+      Definition
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-structure">
+<span class="md-ellipsis">
+      Core Structure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure-components">
+<span class="md-ellipsis">
+      Structure Components
+    </span>
+</a>
+<nav aria-label="Structure Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-components">
+<span class="md-ellipsis">
+      Key Components
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fact-component">
+<span class="md-ellipsis">
+      Fact Component
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attribute-components">
+<span class="md-ellipsis">
+      Attribute Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#component-details">
+<span class="md-ellipsis">
+      Component Details
+    </span>
+</a>
+<nav aria-label="Component Details" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-components_1">
+<span class="md-ellipsis">
+      Key Components
+    </span>
+</a>
+<nav aria-label="Key Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standard-key-components">
+<span class="md-ellipsis">
+      Standard Key Components
+    </span>
+</a>
+<nav aria-label="Standard Key Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-xl-standard-keys">
+<span class="md-ellipsis">
+      DPM-XL Standard Keys
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-ml-standard-keys">
+<span class="md-ellipsis">
+      DPM-ML Standard Keys
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-key-components">
+<span class="md-ellipsis">
+      DPM Key Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fact-component_1">
+<span class="md-ellipsis">
+      Fact Component
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attribute-components_1">
+<span class="md-ellipsis">
+      Attribute Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#record-structure">
+<span class="md-ellipsis">
+      Record Structure
+    </span>
+</a>
+<nav aria-label="Record Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unique-identification">
+<span class="md-ellipsis">
+      Unique Identification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#special-cases">
+<span class="md-ellipsis">
+      Special Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creation-patterns">
+<span class="md-ellipsis">
+      Creation Patterns
+    </span>
+</a>
+<nav aria-label="Creation Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-variable-selections">
+<span class="md-ellipsis">
+      Open Variable Selections
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#variable-set-selections">
+<span class="md-ellipsis">
+      Variable Set Selections
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#closed-variable-selections">
+<span class="md-ellipsis">
+      Closed Variable Selections
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-structures">
+<span class="md-ellipsis">
+      Example Structures
+    </span>
+</a>
+<nav aria-label="Example Structures" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simple-recordset">
+<span class="md-ellipsis">
+      Simple Recordset
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#complex-recordset">
+<span class="md-ellipsis">
+      Complex Recordset
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations-on-recordsets">
+<span class="md-ellipsis">
+      Operations on Recordsets
+    </span>
+</a>
+<nav aria-label="Operations on Recordsets" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#filtering">
+<span class="md-ellipsis">
+      Filtering
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aggregation">
+<span class="md-ellipsis">
+      Aggregation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#joining">
+<span class="md-ellipsis">
+      Joining
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transformation">
+<span class="md-ellipsis">
+      Transformation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-operations-with-recordsets">
+<span class="md-ellipsis">
+      Binary Operations with Recordsets
+    </span>
+</a>
+<nav aria-label="Binary Operations with Recordsets" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exact-same-keys">
+<span class="md-ellipsis">
+      Exact Same Keys
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subset-keys">
+<span class="md-ellipsis">
+      Subset Keys
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inner-join-semantics">
+<span class="md-ellipsis">
+      Inner Join Semantics
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-characteristics">
+<span class="md-ellipsis">
+      Performance Characteristics
+    </span>
+</a>
+<nav aria-label="Performance Characteristics" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory-usage">
+<span class="md-ellipsis">
+      Memory Usage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operation-complexity">
+<span class="md-ellipsis">
+      Operation Complexity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optimization-opportunities">
+<span class="md-ellipsis">
+      Optimization Opportunities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation-guidelines">
+<span class="md-ellipsis">
+      Implementation Guidelines
+    </span>
+</a>
+<nav aria-label="Implementation Guidelines" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure-definition">
+<span class="md-ellipsis">
+      Structure Definition
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#record-storage">
+<span class="md-ellipsis">
+      Record Storage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#efficient-access-patterns">
+<span class="md-ellipsis">
+      Efficient Access Patterns
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#special-behaviors">
+<span class="md-ellipsis">
+      Special Behaviors
+    </span>
+</a>
+<nav aria-label="Special Behaviors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scalar-like-recordsets">
+<span class="md-ellipsis">
+      Scalar-like Recordsets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#empty-recordsets">
+<span class="md-ellipsis">
+      Empty Recordsets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-variable-selection">
+<span class="md-ellipsis">
+      Key Variable Selection
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-patterns">
+<span class="md-ellipsis">
+      Common Patterns
+    </span>
+</a>
+<nav aria-label="Common Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#country-based-aggregation">
+<span class="md-ellipsis">
+      Country-based Aggregation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cross-table-validation">
+<span class="md-ellipsis">
+      Cross-table Validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conditional-processing">
+<span class="md-ellipsis">
+      Conditional Processing
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-types/">
+<span class="md-ellipsis">
+    Data Types
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples.md">
+<span class="md-ellipsis">
+    Examples
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Language Specification
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            Language Specification
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../language-specification/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../language-specification/data-selection.md">
+<span class="md-ellipsis">
+    Data Selection
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../language-specification/null-handling.md">
+<span class="md-ellipsis">
+    Null Handling
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../language-specification/reserved-words.md">
+<span class="md-ellipsis">
+    Reserved Words
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Operators
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/common-behaviors.md">
+<span class="md-ellipsis">
+    Common Behaviors
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Selection
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            Selection
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/selection/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/selection/selection.md">
+<span class="md-ellipsis">
+    Selection Operator
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/selection/with.md">
+<span class="md-ellipsis">
+    With Operator
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Numeric
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            Numeric
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/numeric/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/numeric/unary.md">
+<span class="md-ellipsis">
+    Unary Operators
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/numeric/binary.md">
+<span class="md-ellipsis">
+    Binary Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Comparison
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            Comparison
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/comparison/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/comparison/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Logical
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            Logical
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/logical/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/logical/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Aggregate
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_7">
+<span class="md-nav__icon md-icon"></span>
+            Aggregate
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/aggregate/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/aggregate/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Conditional
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_8">
+<span class="md-nav__icon md-icon"></span>
+            Conditional
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/conditional/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/conditional/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+<span class="md-ellipsis">
+    String
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_9">
+<span class="md-nav__icon md-icon"></span>
+            String
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/string/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/string/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Time
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_10">
+<span class="md-nav__icon md-icon"></span>
+            Time
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/time/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/time/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+<span class="md-ellipsis">
+    Clause
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_11">
+<span class="md-nav__icon md-icon"></span>
+            Clause
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/clause/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../operators/clause/operators.md">
+<span class="md-ellipsis">
+    Operators
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    DPM-ML
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            DPM-ML
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dpm-ml/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dpm-ml/metamodel.md">
+<span class="md-ellipsis">
+    Metamodel
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dpm-ml/tree-representation.md">
+<span class="md-ellipsis">
+    Tree Representation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dpm-ml/operands.md">
+<span class="md-ellipsis">
+    Operands Representation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../dpm-ml/scripts.md">
+<span class="md-ellipsis">
+    Scripts
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Reference
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/grammar.md">
+<span class="md-ellipsis">
+    Grammar
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/operator-summary.md">
+<span class="md-ellipsis">
+    Operator Summary
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/data-type-reference.md">
+<span class="md-ellipsis">
+    Data Type Reference
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Examples
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/index.md">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/basic-examples.md">
+<span class="md-ellipsis">
+    Basic Examples
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/advanced-examples.md">
+<span class="md-ellipsis">
+    Advanced Examples
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../examples/edge-cases.md">
+<span class="md-ellipsis">
+    Edge Cases
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definition">
+<span class="md-ellipsis">
+      Definition
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-structure">
+<span class="md-ellipsis">
+      Core Structure
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure-components">
+<span class="md-ellipsis">
+      Structure Components
+    </span>
+</a>
+<nav aria-label="Structure Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-components">
+<span class="md-ellipsis">
+      Key Components
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fact-component">
+<span class="md-ellipsis">
+      Fact Component
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attribute-components">
+<span class="md-ellipsis">
+      Attribute Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#component-details">
+<span class="md-ellipsis">
+      Component Details
+    </span>
+</a>
+<nav aria-label="Component Details" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-components_1">
+<span class="md-ellipsis">
+      Key Components
+    </span>
+</a>
+<nav aria-label="Key Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standard-key-components">
+<span class="md-ellipsis">
+      Standard Key Components
+    </span>
+</a>
+<nav aria-label="Standard Key Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-xl-standard-keys">
+<span class="md-ellipsis">
+      DPM-XL Standard Keys
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-ml-standard-keys">
+<span class="md-ellipsis">
+      DPM-ML Standard Keys
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dpm-key-components">
+<span class="md-ellipsis">
+      DPM Key Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fact-component_1">
+<span class="md-ellipsis">
+      Fact Component
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attribute-components_1">
+<span class="md-ellipsis">
+      Attribute Components
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#record-structure">
+<span class="md-ellipsis">
+      Record Structure
+    </span>
+</a>
+<nav aria-label="Record Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unique-identification">
+<span class="md-ellipsis">
+      Unique Identification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#special-cases">
+<span class="md-ellipsis">
+      Special Cases
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creation-patterns">
+<span class="md-ellipsis">
+      Creation Patterns
+    </span>
+</a>
+<nav aria-label="Creation Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-variable-selections">
+<span class="md-ellipsis">
+      Open Variable Selections
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#variable-set-selections">
+<span class="md-ellipsis">
+      Variable Set Selections
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#closed-variable-selections">
+<span class="md-ellipsis">
+      Closed Variable Selections
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-structures">
+<span class="md-ellipsis">
+      Example Structures
+    </span>
+</a>
+<nav aria-label="Example Structures" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simple-recordset">
+<span class="md-ellipsis">
+      Simple Recordset
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#complex-recordset">
+<span class="md-ellipsis">
+      Complex Recordset
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations-on-recordsets">
+<span class="md-ellipsis">
+      Operations on Recordsets
+    </span>
+</a>
+<nav aria-label="Operations on Recordsets" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#filtering">
+<span class="md-ellipsis">
+      Filtering
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aggregation">
+<span class="md-ellipsis">
+      Aggregation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#joining">
+<span class="md-ellipsis">
+      Joining
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transformation">
+<span class="md-ellipsis">
+      Transformation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-operations-with-recordsets">
+<span class="md-ellipsis">
+      Binary Operations with Recordsets
+    </span>
+</a>
+<nav aria-label="Binary Operations with Recordsets" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exact-same-keys">
+<span class="md-ellipsis">
+      Exact Same Keys
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#subset-keys">
+<span class="md-ellipsis">
+      Subset Keys
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inner-join-semantics">
+<span class="md-ellipsis">
+      Inner Join Semantics
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-characteristics">
+<span class="md-ellipsis">
+      Performance Characteristics
+    </span>
+</a>
+<nav aria-label="Performance Characteristics" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory-usage">
+<span class="md-ellipsis">
+      Memory Usage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operation-complexity">
+<span class="md-ellipsis">
+      Operation Complexity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optimization-opportunities">
+<span class="md-ellipsis">
+      Optimization Opportunities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation-guidelines">
+<span class="md-ellipsis">
+      Implementation Guidelines
+    </span>
+</a>
+<nav aria-label="Implementation Guidelines" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure-definition">
+<span class="md-ellipsis">
+      Structure Definition
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#record-storage">
+<span class="md-ellipsis">
+      Record Storage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#efficient-access-patterns">
+<span class="md-ellipsis">
+      Efficient Access Patterns
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#special-behaviors">
+<span class="md-ellipsis">
+      Special Behaviors
+    </span>
+</a>
+<nav aria-label="Special Behaviors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scalar-like-recordsets">
+<span class="md-ellipsis">
+      Scalar-like Recordsets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#empty-recordsets">
+<span class="md-ellipsis">
+      Empty Recordsets
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-variable-selection">
+<span class="md-ellipsis">
+      Key Variable Selection
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-patterns">
+<span class="md-ellipsis">
+      Common Patterns
+    </span>
+</a>
+<nav aria-label="Common Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#country-based-aggregation">
+<span class="md-ellipsis">
+      Country-based Aggregation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cross-table-validation">
+<span class="md-ellipsis">
+      Cross-table Validation
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conditional-processing">
+<span class="md-ellipsis">
+      Conditional Processing
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://gitlab.com/aollerosr/dpm-xl-docs/edit/main/docs/information-model/artifacts/recordsets.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<h1 id="recordsets">Recordsets<a class="headerlink" href="#recordsets" title="Permanent link">¶</a></h1>
+<p>Recordsets are the most complex and powerful language artifacts in DPM-XL, representing two-dimensional labeled data structures similar to relational tables or data frames. They enable sophisticated analytical operations and multi-dimensional data processing.</p>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">¶</a></h2>
+<p><strong>Recordsets</strong> are collections of <em>Records</em> that share the same <em>Structure</em>. They are two-dimensional labeled data structures (tabular) that can be assimilated to Relational Tables or Data Frames.</p>
+<h2 id="core-structure">Core Structure<a class="headerlink" href="#core-structure" title="Permanent link">¶</a></h2>
+<div class="mermaid">graph TD
+    A[Recordset] --&gt; B[Structure]
+    A --&gt; C[Records]
+    B --&gt; D[Components]
+    D --&gt; E[Key]
+    D --&gt; F[Fact]
+    D --&gt; G[Attribute]
+    E --&gt; H[Standard]
+    E --&gt; I[DPM]
+    H --&gt; J[Row Key]
+    H --&gt; K[Column Key]
+    H --&gt; L[Sheet Key]
+
+    style A fill:#fff3e0
+    style B fill:#e3f2fd
+    style C fill:#f3e5f5
+    style E fill:#e8f5e8
+</div>
+<h2 id="structure-components">Structure Components<a class="headerlink" href="#structure-components" title="Permanent link">¶</a></h2>
+<p>The structure of a recordset consists of three types of components:</p>
+<h3 id="key-components"><strong>Key Components</strong><a class="headerlink" href="#key-components" title="Permanent link">¶</a></h3>
+<p>Provide unique identification for each record:
+- Combination of key component values uniquely identifies each record
+- Used for joining and matching operations
+- Can be Standard or DPM-specific</p>
+<h3 id="fact-component"><strong>Fact Component</strong><a class="headerlink" href="#fact-component" title="Permanent link">¶</a></h3>
+<p>Contains the primary measured value:
+- Every recordset has exactly one fact component
+- Named "f" by convention
+- Contains the main data of interest</p>
+<h3 id="attribute-components"><strong>Attribute Components</strong><a class="headerlink" href="#attribute-components" title="Permanent link">¶</a></h3>
+<p>Provide additional metadata about the fact value:
+- Optional components providing context
+- Can include precision, currency, status codes, etc.
+- Support rich data annotation</p>
+<h2 id="component-details">Component Details<a class="headerlink" href="#component-details" title="Permanent link">¶</a></h2>
+<h3 id="key-components_1">Key Components<a class="headerlink" href="#key-components_1" title="Permanent link">¶</a></h3>
+<p>Key components come in two varieties:</p>
+<h4 id="standard-key-components"><strong>Standard Key Components</strong><a class="headerlink" href="#standard-key-components" title="Permanent link">¶</a></h4>
+<h5 id="dpm-xl-standard-keys">DPM-XL Standard Keys<a class="headerlink" href="#dpm-xl-standard-keys" title="Permanent link">¶</a></h5>
+<ul>
+<li><strong>Row Key (<code>r</code>)</strong>: Identifies the row ordinate from a Report Table</li>
+<li><strong>Column Key (<code>c</code>)</strong>: Identifies the column ordinate from a Report Table</li>
+<li><strong>Sheet Key (<code>s</code>)</strong>: Identifies the sheet ordinate from a Report Table</li>
+</ul>
+<h5 id="dpm-ml-standard-keys">DPM-ML Standard Keys<a class="headerlink" href="#dpm-ml-standard-keys" title="Permanent link">¶</a></h5>
+<ul>
+<li><strong>X Index</strong>: Abstract index for variable matching</li>
+<li><strong>Y Index</strong>: Abstract index for variable matching  </li>
+<li><strong>Z Index</strong>: Abstract index for variable matching</li>
+</ul>
+<h4 id="dpm-key-components"><strong>DPM Key Components</strong><a class="headerlink" href="#dpm-key-components" title="Permanent link">¶</a></h4>
+<ul>
+<li>Specific to how data is defined in the DPM</li>
+<li>One component per Key Variable associated to selected Variables</li>
+<li>Named using the Code of the Property associated to the Key Variable</li>
+<li>Data type matches the associated Property or Metric</li>
+</ul>
+<h3 id="fact-component_1">Fact Component<a class="headerlink" href="#fact-component_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Mandatory single component named "f"</li>
+<li>Data type depends on the selected Variables</li>
+<li>Contains the primary measurement or value</li>
+<li>When a Key Variable is selected, appears in both Key and Fact components</li>
+</ul>
+<h3 id="attribute-components_1">Attribute Components<a class="headerlink" href="#attribute-components_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Provide additional information about the Fact value</li>
+<li>One component per Property or Metric associated to Attribute Variables</li>
+<li>Named using the Code of the Property associated to the Attribute Variable</li>
+<li>Support metadata like precision, currency, validation status</li>
+</ul>
+<h2 id="record-structure">Record Structure<a class="headerlink" href="#record-structure" title="Permanent link">¶</a></h2>
+<p>Each record in a recordset contains:
+- <strong>Values for all Key Components</strong>: Providing unique identification
+- <strong>Value for the Fact Component</strong>: The primary data
+- <strong>Values for Attribute Components</strong>: Additional metadata</p>
+<h3 id="unique-identification">Unique Identification<a class="headerlink" href="#unique-identification" title="Permanent link">¶</a></h3>
+<p>Each record is individually identified by the <strong>combination of values for its Key Components</strong>.</p>
+<h3 id="special-cases">Special Cases<a class="headerlink" href="#special-cases" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>No Key Components</strong>: Recordset behaves like a Scalar</li>
+<li><strong>No Records</strong>: Empty recordset is valid and maintains structure</li>
+</ul>
+<h2 id="creation-patterns">Creation Patterns<a class="headerlink" href="#creation-patterns" title="Permanent link">¶</a></h2>
+<p>Recordsets arise from several types of data selections:</p>
+<h3 id="open-variable-selections"><strong>Open Variable Selections</strong><a class="headerlink" href="#open-variable-selections" title="Permanent link">¶</a></h3>
+<p>Select variables associated with keys, creating multi-record recordsets:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>{F_40.01, c0031}  # Selects all values for an open variable
+</code></pre></div></p>
+<h3 id="variable-set-selections"><strong>Variable Set Selections</strong><a class="headerlink" href="#variable-set-selections" title="Permanent link">¶</a></h3>
+<p>Select multiple variables, creating recordsets with standard key components:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>{F_20.05, r0020-0030, c0010}  # Multiple rows create row key component
+</code></pre></div></p>
+<h3 id="closed-variable-selections"><strong>Closed Variable Selections</strong><a class="headerlink" href="#closed-variable-selections" title="Permanent link">¶</a></h3>
+<p>Select single specific variables:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>{F_01.01, r0010, c0010}  # Single cell, behaves like scalar
+</code></pre></div></p>
+<h2 id="example-structures">Example Structures<a class="headerlink" href="#example-structures" title="Permanent link">¶</a></h2>
+<h3 id="simple-recordset">Simple Recordset<a class="headerlink" href="#simple-recordset" title="Permanent link">¶</a></h3>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>| CNT | f   |
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>|-----|-----|
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>| ES  | 100 |
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>| PT  | 200 |
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>| DE  | 300 |
+</code></pre></div>
+- Key Component: CNT (country)
+- Fact Component: f (value)
+- 3 records</p>
+<h3 id="complex-recordset">Complex Recordset<a class="headerlink" href="#complex-recordset" title="Permanent link">¶</a></h3>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>| LIN    | TYC  | r    | f     | precision |
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>|--------|------|------|-------|-----------|
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>| 123456 | LEI  | 0020 | 1000  | 1         |
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>| 123456 | ISIN | 0020 | 2000  | 1         |
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>| 789012 | LEI  | 0030 | 3000  | 2         |
+</code></pre></div>
+- Key Components: LIN, TYC, r
+- Fact Component: f
+- Attribute Component: precision
+- 3 records</p>
+<h2 id="operations-on-recordsets">Operations on Recordsets<a class="headerlink" href="#operations-on-recordsets" title="Permanent link">¶</a></h2>
+<h3 id="filtering"><strong>Filtering</strong><a class="headerlink" href="#filtering" title="Permanent link">¶</a></h3>
+<p>Select subset of records based on conditions:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>{F_40.01, c0031}[where TYC = "LEI"]
+</code></pre></div></p>
+<h3 id="aggregation"><strong>Aggregation</strong><a class="headerlink" href="#aggregation" title="Permanent link">¶</a></h3>
+<p>Combine multiple records into summary values:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>sum({F_20.05, r0020-0030, c0010} group by CNT)
+</code></pre></div></p>
+<h3 id="joining"><strong>Joining</strong><a class="headerlink" href="#joining" title="Permanent link">¶</a></h3>
+<p>Combine recordsets based on common keys:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>{F_01.01, c0010} + {F_01.01, c0020}  # Inner join on common keys
+</code></pre></div></p>
+<h3 id="transformation"><strong>Transformation</strong><a class="headerlink" href="#transformation" title="Permanent link">¶</a></h3>
+<p>Modify structure or values:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>{F_40.01, c0031}[rename TYC to TypeCode]
+</code></pre></div></p>
+<h2 id="binary-operations-with-recordsets">Binary Operations with Recordsets<a class="headerlink" href="#binary-operations-with-recordsets" title="Permanent link">¶</a></h2>
+<p>When recordsets are used in binary operations, they must satisfy compatibility constraints:</p>
+<h3 id="exact-same-keys"><strong>Exact Same Keys</strong><a class="headerlink" href="#exact-same-keys" title="Permanent link">¶</a></h3>
+<p>Both recordsets have identical key components:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>{F_01.01, c0010} + {F_01.01, c0020}
+</code></pre></div></p>
+<h3 id="subset-keys"><strong>Subset Keys</strong><a class="headerlink" href="#subset-keys" title="Permanent link">¶</a></h3>
+<p>One recordset's keys are a superset of the other's:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>{F_40.01, c0110} &gt;= {F_40.02, c0060}
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a># F_40.02 has additional key components
+</code></pre></div></p>
+<h3 id="inner-join-semantics"><strong>Inner Join Semantics</strong><a class="headerlink" href="#inner-join-semantics" title="Permanent link">¶</a></h3>
+<p>Operations perform inner joins on common key components.</p>
+<h2 id="performance-characteristics">Performance Characteristics<a class="headerlink" href="#performance-characteristics" title="Permanent link">¶</a></h2>
+<h3 id="memory-usage"><strong>Memory Usage</strong><a class="headerlink" href="#memory-usage" title="Permanent link">¶</a></h3>
+<ul>
+<li>Proportional to number of records × number of components</li>
+<li>Structure overhead is minimal</li>
+<li>Large recordsets may require optimization</li>
+</ul>
+<h3 id="operation-complexity"><strong>Operation Complexity</strong><a class="headerlink" href="#operation-complexity" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Filtering</strong>: O(n) where n = number of records</li>
+<li><strong>Aggregation</strong>: O(n) to O(n log n) depending on grouping</li>
+<li><strong>Joining</strong>: O(n × m) to O(n + m) with proper indexing</li>
+</ul>
+<h3 id="optimization-opportunities"><strong>Optimization Opportunities</strong><a class="headerlink" href="#optimization-opportunities" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Indexing</strong>: On key components for fast joins</li>
+<li><strong>Columnar storage</strong>: For analytical operations</li>
+<li><strong>Lazy evaluation</strong>: For chained operations</li>
+</ul>
+<h2 id="implementation-guidelines">Implementation Guidelines<a class="headerlink" href="#implementation-guidelines" title="Permanent link">¶</a></h2>
+<h3 id="structure-definition"><strong>Structure Definition</strong><a class="headerlink" href="#structure-definition" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>class RecordsetStructure {
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>    List&lt;Component&gt; keyComponents;
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>    Component factComponent;
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>    List&lt;Component&gt; attributeComponents;
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>}
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>class Component {
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>    String name;
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a>    DataType dataType;
+<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a>    ComponentRole role;  // KEY, FACT, ATTRIBUTE
+<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a>}
+</code></pre></div>
+<h3 id="record-storage"><strong>Record Storage</strong><a class="headerlink" href="#record-storage" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>class Recordset {
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a>    RecordsetStructure structure;
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>    List&lt;Record&gt; records;
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a>
+<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>    Record findByKeys(Map&lt;String, Value&gt; keyValues);
+<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a>    List&lt;Record&gt; filter(Predicate&lt;Record&gt; condition);
+<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a>    Recordset join(Recordset other, JoinType type);
+<a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a>}
+</code></pre></div>
+<h3 id="efficient-access-patterns"><strong>Efficient Access Patterns</strong><a class="headerlink" href="#efficient-access-patterns" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Primary index</strong>: On all key components combined</li>
+<li><strong>Secondary indexes</strong>: On individual key components</li>
+<li><strong>Column access</strong>: For analytical operations</li>
+</ul>
+<h2 id="special-behaviors">Special Behaviors<a class="headerlink" href="#special-behaviors" title="Permanent link">¶</a></h2>
+<h3 id="scalar-like-recordsets"><strong>Scalar-like Recordsets</strong><a class="headerlink" href="#scalar-like-recordsets" title="Permanent link">¶</a></h3>
+<p>Recordsets with no key components behave like scalars:
+- Single record (or no records)
+- Operations treat them as scalar values
+- Can be used wherever scalars are expected</p>
+<h3 id="empty-recordsets"><strong>Empty Recordsets</strong><a class="headerlink" href="#empty-recordsets" title="Permanent link">¶</a></h3>
+<p>Valid recordsets with no records:
+- Maintain structure definition
+- Aggregations return appropriate empty values (null, 0, etc.)
+- Joins produce empty results</p>
+<h3 id="key-variable-selection"><strong>Key Variable Selection</strong><a class="headerlink" href="#key-variable-selection" title="Permanent link">¶</a></h3>
+<p>When selecting key variables, values appear in both key and fact components:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>| LIN    | TYC  | f    |
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>|--------|------|------|
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>| 123456 | LEI  | LEI  |
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>| 123456 | ISIN | ISIN |
+</code></pre></div>
+This enables calculations on key values while maintaining record identity.</p>
+<h2 id="common-patterns">Common Patterns<a class="headerlink" href="#common-patterns" title="Permanent link">¶</a></h2>
+<h3 id="country-based-aggregation"><strong>Country-based Aggregation</strong><a class="headerlink" href="#country-based-aggregation" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>sum({F_20.05, r0020-0030, c0010} group by CNT)
+</code></pre></div>
+<h3 id="cross-table-validation"><strong>Cross-table Validation</strong><a class="headerlink" href="#cross-table-validation" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>{F_01.01, r0010, c0010} = sum({F_20.05, r0020-0030, c0010})
+</code></pre></div>
+<h3 id="conditional-processing"><strong>Conditional Processing</strong><a class="headerlink" href="#conditional-processing" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>if sum({F_01.01, r0010-0020, c0010}) &gt; 1000 
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>then {F_01.01, r0030, c0010} 
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>else 0
+</code></pre></div>
+<hr/>
+<div class="admonition note">
+<p class="admonition-title">Recordset Design Philosophy</p>
+<p>Recordsets bridge the gap between business concepts (tables, reports) and computational needs (structured data processing). They maintain the familiar tabular metaphor while enabling sophisticated analytical operations.</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

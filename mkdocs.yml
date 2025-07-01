@@ -1,7 +1,7 @@
 site_name: DPM Expression Language (DPM-XL) Documentation
 site_description: Comprehensive documentation for the Data Point Model Expression Language
 site_author: DPM-XL Standards Committee
-repo_url: https://github.com/your-org/dpm-xl-docs
+repo_url: https://gitlab.com/aollerosr/dpm-xl-docs
 edit_uri: edit/main/docs/
 
 theme:
