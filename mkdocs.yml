@@ -61,71 +61,10 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Introduction:
-    - Overview: introduction/index.md
-    - Why DPM-XL: introduction/why.md
-    - DPM-XL vs DPM-ML: introduction/dpm-xl-vs-dpm-ml.md
-    - Formalization Approach: introduction/approach.md
   - Information Model:
-    - Overview: information-model/index.md
-    - Operations: information-model/operations.md
-    - Language Artifacts:
-      - Overview: information-model/artifacts/index.md
-      - Scalars: information-model/artifacts/scalars.md
-      - Scalar Sets: information-model/artifacts/scalar-sets.md
-      - Recordsets: information-model/artifacts/recordsets.md
-    - Data Types: information-model/data-types.md
-    - Examples: information-model/examples.md
-  - Language Specification:
-    - Overview: language-specification/index.md
-    - Data Selection: language-specification/data-selection.md
-    - Null Handling: language-specification/null-handling.md
-    - Reserved Words: language-specification/reserved-words.md
-  - Operators:
-    - Overview: operators/index.md
-    - Common Behaviors: operators/common-behaviors.md
-    - Selection:
-      - Overview: operators/selection/index.md
-      - Selection Operator: operators/selection/selection.md
-      - With Operator: operators/selection/with.md
-    - Numeric:
-      - Overview: operators/numeric/index.md
-      - Unary Operators: operators/numeric/unary.md
-      - Binary Operators: operators/numeric/binary.md
-    - Comparison:
-      - Overview: operators/comparison/index.md
-      - Operators: operators/comparison/operators.md
-    - Logical:
-      - Overview: operators/logical/index.md
-      - Operators: operators/logical/operators.md
-    - Aggregate:
-      - Overview: operators/aggregate/index.md
-      - Operators: operators/aggregate/operators.md
-    - Conditional:
-      - Overview: operators/conditional/index.md
-      - Operators: operators/conditional/operators.md
-    - String:
-      - Overview: operators/string/index.md
-      - Operators: operators/string/operators.md
-    - Time:
-      - Overview: operators/time/index.md
-      - Operators: operators/time/operators.md
-    - Clause:
-      - Overview: operators/clause/index.md
-      - Operators: operators/clause/operators.md
-  - DPM-ML:
-    - Overview: dpm-ml/index.md
-    - Metamodel: dpm-ml/metamodel.md
-    - Tree Representation: dpm-ml/tree-representation.md
-    - Operands Representation: dpm-ml/operands.md
-    - Scripts: dpm-ml/scripts.md
-  - Reference:
-    - Overview: reference/index.md
-    - Grammar: reference/grammar.md
-    - Operator Summary: reference/operator-summary.md
-    - Data Type Reference: reference/data-type-reference.md
-  - Examples:
-    - Overview: examples/index.md
-    - Basic Examples: examples/basic-examples.md
-    - Advanced Examples: examples/advanced-examples.md
-    - Edge Cases: examples/edge-cases.md
+    - Introduction: information-model/introduction.md
+    - Information Model: information-model/information-model.md
+    - DPM-XL Data Selection: information-model/data-selection.md
+    - Null handling: information-model/null-treatment.md
+    - DPM-ML: information-model/dpm-ml.md
+

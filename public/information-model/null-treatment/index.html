@@ -13,21 +13,25 @@
       
       
       
+        <link rel="prev" href="../data-selection/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../dpm-ml/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>DPM Expression Language (DPM-XL) Documentation</title>
+        <title>Null handling - DPM Expression Language (DPM-XL) Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#4-null-in-dpm-expression-language" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="DPM Expression Language (DPM-XL) Documentation" class="md-header__button md-logo" aria-label="DPM Expression Language (DPM-XL) Documentation" data-md-component="logo">
+    <a href="../.." title="DPM Expression Language (DPM-XL) Documentation" class="md-header__button md-logo" aria-label="DPM Expression Language (DPM-XL) Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Null handling
             
           </span>
         </div>
@@ -217,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -234,11 +243,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/information-model/introduction/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introduction/" class="md-tabs__link">
           
   
   
@@ -272,7 +283,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="DPM Expression Language (DPM-XL) Documentation" class="md-nav__button md-logo" aria-label="DPM Expression Language (DPM-XL) Documentation" data-md-component="logo">
+    <a href="../.." title="DPM Expression Language (DPM-XL) Documentation" class="md-nav__button md-logo" aria-label="DPM Expression Language (DPM-XL) Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -302,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -321,28 +332,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -355,7 +369,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Information Model
@@ -369,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/information-model/introduction/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
@@ -392,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/information-model/information-model/" class="md-nav__link">
+      <a href="../information-model/" class="md-nav__link">
         
   
   
@@ -415,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/information-model/data-selection/" class="md-nav__link">
+      <a href="../data-selection/" class="md-nav__link">
         
   
   
@@ -435,10 +449,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/information-model/null-treatment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Null handling
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -449,6 +485,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-null-and-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Null and data types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-implicit-an-explicit-null-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Implicit an explicit null values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-null-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Null treatment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-overriding-the-standard-null-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Overriding the standard null treatment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -461,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/information-model/dpm-ml/" class="md-nav__link">
+      <a href="../dpm-ml/" class="md-nav__link">
         
   
   
@@ -501,6 +593,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-null-and-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Null and data types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-implicit-an-explicit-null-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Implicit an explicit null values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-null-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Null treatment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-overriding-the-standard-null-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Overriding the standard null treatment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -512,8 +650,60 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+    <a href="https://gitlab.com/aollerosr/dpm-xl-docs/edit/main/docs/information-model/null-treatment.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="4-null-in-dpm-expression-language">4 Null in DPM Expression Language<a class="headerlink" href="#4-null-in-dpm-expression-language" title="Permanent link">&para;</a></h1>
+<h2 id="41-null-and-data-types">4.1 Null and data types<a class="headerlink" href="#41-null-and-data-types" title="Permanent link">&para;</a></h2>
+<p>All the Data Types are assumed to contain the conventional value null, which means "no value", or "absence of known value" or "missing value". Note that the null value, therefore, is the only value of multiple different types.</p>
+<p>For the String Data Type, null is considered equivalent to the empty string.</p>
+<h2 id="42-implicit-an-explicit-null-values">4.2 Implicit an explicit null values<a class="headerlink" href="#42-implicit-an-explicit-null-values" title="Permanent link">&para;</a></h2>
+<p>For Recordsets, nulls may arise in a selection for two reasons:</p>
+<ul>
+<li><strong>Explicit null</strong>: In the input data for the engine, there is a record without a value.</li>
+<li><strong>Implicit null</strong>: In the input data for the engine, there is no record for one of the Variables in the selection. In this case, the engine will generate a record for that variable with a null value, or another specified default (see Selection Operator in part 2).</li>
+</ul>
+<p>In any case, there are no differences in how implicit or explicit nulls are treated.</p>
+<h2 id="43-null-treatment">4.3 Null treatment<a class="headerlink" href="#43-null-treatment" title="Permanent link">&para;</a></h2>
+<p>In general, most of the operations return null when any of their arguments is null.</p>
+<ul>
+<li><strong>Comparison operators</strong> (e.g., -, &gt;): if a null is involved in the operation, then the result is null.</li>
+<li><strong>Arithmetic operators</strong> (e.g., + , -, *): if a null is involved in the operation, then the result is null.</li>
+<li><strong>String operators</strong>: null is considered an empty string.</li>
+<li><strong>Logical operators</strong> (and, or, xor, not): Three-value logic is adopted with the consideration that null means unknown. The concrete results for each operator are specified in part 2, in the description of the operators.</li>
+<li><strong>Conditional operators</strong>: null is considered equivalent to false.</li>
+<li><strong>Filtering</strong>: null is considered equivalent to false (i.e., the Records with a null value are not selected in the filter).</li>
+<li><strong>Aggregations</strong> (e.g., sum, avg, max): nulls are excluded from the calculations.</li>
+<li><strong>Intervals</strong>: If the centre is null, the radius is also null.</li>
+</ul>
+<h2 id="44-overriding-the-standard-null-treatment">4.4 Overriding the standard null treatment<a class="headerlink" href="#44-overriding-the-standard-null-treatment" title="Permanent link">&para;</a></h2>
+<p>The standard null treatment can be overriding by substituting the null values for other values. This can be done in two ways:</p>
+<ul>
+<li><strong>With the Selection Operator</strong>: It is possible to set a default value in the selection for the null values.</li>
+<li><strong>With the nvl Operator</strong>: serves to substitute nulls for any value.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -555,10 +745,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
