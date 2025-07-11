@@ -60,6 +60,10 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
+
+extra_css:
+  - style.css
+
 nav:
   - Home: index.md
   - Information Model:
@@ -68,4 +72,5 @@ nav:
     - DPM-XL Data Selection: information-model/data-selection.md
     - Null handling: information-model/null-treatment.md
     - DPM-ML: information-model/dpm-ml.md
+
 

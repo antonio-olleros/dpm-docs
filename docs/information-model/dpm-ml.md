@@ -2,6 +2,8 @@
 
 ## 5.1 Operation and OperationVersion
 
+![image](../immages/dpm-ml-01.png)
+
 Operations have a code and can be grouped.
 
 Groups of operations refer to the cases where users define a parent validation and the system derives automatically children validations. There can only be two levels of operations (i.e., a child validation cannot be the parent of another validation). The types of validations that generate children are Variant and Property constraint validations (see below).
@@ -30,6 +32,8 @@ Operations can have many versions. A new version of an operation is required whe
 - **SeverityOperation**: A link to an operation that determines the conditional severity.
 
 ## 5.2 Operation tree
+
+![image](../immages/dpm-ml-02.png)
 
 ### 5.2.1 Operation nodes
 
@@ -142,6 +146,8 @@ Note that the operations shall be applied to the variables having the same index
 
 ## 5.3 Operation Scope
 
+![image](../immages/dpm-ml-03.png)
+
 Each operation version can be applied in different scopes. An operation scope refers to the individual module versions or sets of module versions (for cross-module validations) to which the operation logically applies.
 
 For each operation scope, there may be different values for the attributes:
@@ -151,5 +157,7 @@ For each operation scope, there may be different values for the attributes:
 - **FromSubmissionDate**: Sets a date from which the validation applies to subsequent submissions.
 
 ## 5.4 Variable calculation
+
+![image](../immages/dpm-ml-04.png)
 
 For calculations (i.e., operations that serve to calculate values for variables), it is necessary to link the operation to the actual variable that is generated. This is done with the VariableCalculation table, which links to the Variable and the Module. The link to the Module is necessary due to the fact that a Variable can be used in several Modules, being calculated in some cases and not calculated in other cases.

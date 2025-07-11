@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="../../style.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -728,6 +730,7 @@
 
 <h1 id="5-dpm-ml-metamodel">5 DPM-ML Metamodel<a class="headerlink" href="#5-dpm-ml-metamodel" title="Permanent link">&para;</a></h1>
 <h2 id="51-operation-and-operationversion">5.1 Operation and OperationVersion<a class="headerlink" href="#51-operation-and-operationversion" title="Permanent link">&para;</a></h2>
+<p><img alt="image" src="../../immages/dpm-ml-01.png" /></p>
 <p>Operations have a code and can be grouped.</p>
 <p>Groups of operations refer to the cases where users define a parent validation and the system derives automatically children validations. There can only be two levels of operations (i.e., a child validation cannot be the parent of another validation). The types of validations that generate children are Variant and Property constraint validations (see below).</p>
 <p>Operations and may be of any of 4 types:</p>
@@ -754,6 +757,7 @@
 <li><strong>SeverityOperation</strong>: A link to an operation that determines the conditional severity.</li>
 </ul>
 <h2 id="52-operation-tree">5.2 Operation tree<a class="headerlink" href="#52-operation-tree" title="Permanent link">&para;</a></h2>
+<p><img alt="image" src="../../immages/dpm-ml-02.png" /></p>
 <h3 id="521-operation-nodes">5.2.1 Operation nodes<a class="headerlink" href="#521-operation-nodes" title="Permanent link">&para;</a></h3>
 <p>The tree representation of an OperationVersion is provided in the OperationNode table.</p>
 <p>Any Operation can be represented as a hierarchical tree, where the arguments of one Operator are represented.</p>
@@ -1015,6 +1019,7 @@
 </table>
 <p>Note that the operations shall be applied to the variables having the same index. For instance, Variable 1 = 2 * (Variable 2 + Variable 3), because all of them have the index y=1 and z=1.</p>
 <h2 id="53-operation-scope">5.3 Operation Scope<a class="headerlink" href="#53-operation-scope" title="Permanent link">&para;</a></h2>
+<p><img alt="image" src="../../immages/dpm-ml-03.png" /></p>
 <p>Each operation version can be applied in different scopes. An operation scope refers to the individual module versions or sets of module versions (for cross-module validations) to which the operation logically applies.</p>
 <p>For each operation scope, there may be different values for the attributes:</p>
 <ul>
@@ -1023,6 +1028,7 @@
 <li><strong>FromSubmissionDate</strong>: Sets a date from which the validation applies to subsequent submissions.</li>
 </ul>
 <h2 id="54-variable-calculation">5.4 Variable calculation<a class="headerlink" href="#54-variable-calculation" title="Permanent link">&para;</a></h2>
+<p><img alt="image" src="../../immages/dpm-ml-04.png" /></p>
 <p>For calculations (i.e., operations that serve to calculate values for variables), it is necessary to link the operation to the actual variable that is generated. This is done with the VariableCalculation table, which links to the Variable and the Module. The link to the Module is necessary due to the fact that a Variable can be used in several Modules, being calculated in some cases and not calculated in other cases.</p>
 
 

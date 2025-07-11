@@ -205,6 +205,8 @@ Recordsets arise from Open Variable selections or from selection of multiple Var
 
 For instance, taking as an example EBA's Table F 01.01:
 
+![image](../immages/information-model-01.png)
+
 ```
 {tF_01.01, r0010, c0010}
 ```
@@ -213,11 +215,14 @@ In the context of a single instance (i.e., disregarding the "ref_date" and the "
 
 In the context of data with multiple dates and/or reference dates, and supposing that the data refer to the subject with code "id123" and to the date 31/12/2020, and that it has been reported with a 1 precision (attribute):
 
-| subject | ref_date | f | p |
+| subject  {#k} | ref_date {#k}| f {#f}| p {#a} |
 |---------|----------|---|---|
 | id123 | 2020-12-31 | 100 | 1 |
 
 #### 2.2.4.2 Open Variable Selection
+
+![image](../immages/information-model-02.png)
+
 
 ```
 {F 40.01 c0031}
@@ -227,7 +232,7 @@ Selects an Open Variable. In this illustrative example, yields a Recordset with 
 
 The following table represents the Recordset:
 
-| LIN | TYC | f |
+| LIN {#k} | TYC {#k}| f {#f}|
 |-----|-----|---|
 | 123456 | LEI | Name 1 |
 | 123456 | ISIN | Name 2 |
@@ -235,13 +240,15 @@ The following table represents the Recordset:
 
 #### 2.2.4.3 Variable Set Selection
 
+![image](../immages/information-model-03.png)
+
 ```
 {F 20.05 r0020-0030, c0010}
 ```
 
 This case selects a set of Variables because the selection includes more than one Row. This implies that the Row Key Component applies to this Recordset. Besides, the selected Variables are associated to a Key with a single Key Variable, which is associated to a property with code "RCP".
 
-| RCP | r | f |
+| RCP {#k}| r {#k}| f {#f}|
 |-----|---|---|
 | ES | 0020 | 200 |
 | ES | 0030 | 300 |
@@ -250,7 +257,7 @@ This case selects a set of Variables because the selection includes more than on
 
 In this case, the recordset for the DPM-ML would be slightly different because of the change in the Standard Key Component. Instead of the row, we would have any of the three indexes. For instance, using the x index:
 
-| RCP | x | f |
+| RCP {#k}| x {#k}| f {#f}|
 |-----|---|---|
 | ES | 1 | 200 |
 | ES | 2 | 300 |
@@ -261,6 +268,8 @@ Note that the important thing for DPM-ML to be consistent is that all the record
 
 #### 2.2.4.4 Key Variable Selection
 
+![image](../immages/information-model-04.png)
+
 ```
 {F 40.01 c0015}
 ```
@@ -269,7 +278,7 @@ Selects an Open Key Variable. The Recordset, in the context of a single instance
 
 The following table represents the Recordset:
 
-| LIN | TYC | f |
+| LIN {#k} | TYC {#k} | f {#f}|
 |-----|-----|---|
 | 123456 | LEI | LEI |
 | 123456 | ISIN | ISIN |
@@ -285,7 +294,7 @@ The data types are:
 
 - **String**: Sequence of alphanumeric characters of any length.
 - **Number**: Is a rational number of any magnitude and precision, also used as approximation of a real number. Numbers can be treated as points or as intervals. Intervals are defined as a centre plus and minus a radius (c ± r). The centre is the input value provided. The radius is calculated based on the precision of the number as 10⁻ᵖ/2.
-- **Integer**: Positive and negative integer numbers and zero. It Is a subtype of the type number. As number subtypes, integers can be treated as intervals.
+  - **Integer**: Positive and negative integer numbers and zero. It Is a subtype of the type number. As number subtypes, integers can be treated as intervals.
 - **Time interval** denotes time intervals of any duration and expressed with a precision. According to ISO 8601 (ISO standard for the representation of dates and times), a time interval is the intervening time between two time points.
   - **Date** is a subtype of the type time which denotes time points expressed at any precision, which are time intervals starting and ending in the same time point (i.e., intervals of zero duration). A value of type date includes all the parts needed to identify a time point at the desired precision, like the year, the month, the day, the hour, the minute and so on (for example, 2018-04-05 is the fifth of April 2018, at the precision of the day).
   - **Time period** is a subtype of the type time, and denotes non-overlapping time intervals having a regular duration (for example the years, the quarters of years, the months, the weeks and so on). A value of the type time period is composite and must include all the parts needed to identify a regular time period at the desired precision; in particular, the time-period type includes the explicit indication of the kind of regular period considered (e.g., "day", "week", "month", "quarter" …). For example, the value 2018M04, assuming that "M" stands for "month", denotes the month n.4 of the 2018 (April 2018). Moreover, 2018Q2, assuming that "Q" stands for 1896 "quarter", denotes the second quarter of 2018. In these examples, the letters M and Q are used to denote the kind of period through its duration.
