@@ -67,10 +67,25 @@ extra_css:
 nav:
   - Home: index.md
   - Information Model:
-    - Introduction: information-model/introduction.md
-    - Information Model: information-model/information-model.md
-    - DPM-XL Data Selection: information-model/data-selection.md
-    - Null handling: information-model/null-treatment.md
-    - DPM-ML: information-model/dpm-ml.md
+    - Introduction: information-model/01-introduction.md
+    - Information Model: information-model/02-information-model.md
+    - DPM-XL Data Selection: information-model/03-data-selection.md
+    - Null handling: information-model/04-null-treatment.md
+    - DPM-ML: information-model/05-dpm-ml.md
+  - Operators:
+    - Introduction: operators/01-introduction.md
+    - General behaviour: operators/02-general-behaviour.md
+    - Selection: operators/03-selection-operators.md
+    - Numeric: operators/04-numeric-operators.md
+    - Comparison: operators/05-comparison-operators.md
+    - Logical: operators/06-logical-operators.md
+    - Aggregate: operators/07-aggregate-operators.md
+    - Conditional: operators/08-conditional-operators.md
+    - String: operators/09-string-operators.md
+    - Time: operators/10-time-operators.md
+    - Clause: operators/11-clause-operators.md
+
+
+
 
 
