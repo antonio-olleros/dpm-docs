@@ -45,28 +45,18 @@ This expression validates that the value in table F_01.01, row 0010, column 0010
 
 This documentation is organized to take you from basic concepts to advanced implementation:
 
-### 📚 [Introduction](introduction/)
-Learn about the motivation, design principles, and relationship between DPM-XL and DPM-ML.
-
-### 🏗️ [Information Model](information-model/)
+### 🏗️ [Information Model](information-model/01-introduction.md)
 Understand the core data structures: operations, artifacts (scalars, sets, recordsets), and data types.
 
-### 📝 [Language Specification](language-specification/)
-Master the syntax rules, data selection mechanisms, and language features.
-
-### ⚙️ [Operators](operators/)
+### ⚙️ [Operators](operators/01-introduction.md)
 Comprehensive reference for all operators, organized by category:
 - Selection, Numeric, Comparison, Logical
 - Aggregate, Conditional, String, Time, Clause
 
-### 🔧 [DPM-ML](dpm-ml/)
-Learn about the metamodel representation and tree structures.
 
-### 📖 [Reference](reference/)
+### 📖 [Grammar](grammar/01-introduction.md)
 Quick reference materials, grammar specifications, and operator summaries.
 
-### 💡 [Examples](examples/)
-Practical examples from basic usage to complex edge cases.
 
 ## Who Should Use This Documentation?
 
