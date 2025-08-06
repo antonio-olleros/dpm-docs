@@ -1,6 +1,6 @@
 site_name: DPM Expression Language (DPM-XL) Documentation
 site_description: Comprehensive documentation for the Data Point Model Expression Language
-site_author: DPM-XL Standards Committee
+site_author: EBA and EIOPA
 repo_url: https://gitlab.com/aollerosr/dpm-xl-docs
 edit_uri: edit/main/docs/
 
@@ -37,6 +37,8 @@ plugins:
   - search
   - mermaid2:
       version: 11.8.0
+  - with-pdf:
+      output_path: pdf/dpm-xl-documentation.pdf
 
 markdown_extensions:
   - toc:
@@ -84,6 +86,8 @@ nav:
     - String: operators/09-string-operators.md
     - Time: operators/10-time-operators.md
     - Clause: operators/11-clause-operators.md
+  - Grammar:
+    - Introduction: grammar/01-introduction.md
 
 
 
