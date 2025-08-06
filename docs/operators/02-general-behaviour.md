@@ -80,7 +80,7 @@ Binary Operators can only be applied to two Recordsets _Operands_ if they have:
 
 #### 2.2.3.2 Structure
 
-The _Operator_ yields a _Recordset_ with the common Key Components in case 1, or the Key Components of the Reference _Recordset_ in case 2. The resulting _Recordset_ does not contain any Attribute Component from the _Operand _Recordsets.
+The _Operator_ yields a _Recordset_ with the common Key Components in case 1, or the Key Components of the Reference _Recordset_ in case 2. The resulting _Recordset_ does not contain any Attribute Component from the _Operand_ _Recordsets_.
 
 #### 2.2.3.3 Records
 

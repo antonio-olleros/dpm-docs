@@ -4,14 +4,20 @@
 
 ### 3.1.1 Syntax
 
-```
-{[ttable | vvariable | ooperation]1
-[rrow [, rrow]* | rrow_init–rrow_end | r*]*
-[ccol [, ccol]*| ccol_init–ccol_end | c* ]*
-[ssheet [, ssheet]*| ssheet_init–ssheet_end | s*]*
-interval_arithmetics, fallback_value
-}
-```
+
+> {
+  
+>> [**t**table | **v**variable | **o**operation]1
+
+>> [**r**row [, **r**row]* | **r**row_init–row_end | **r***]*
+
+>> [**c**col [, **c**col]*| **c**col_init–col_end | **c*** ]*
+
+>> [**s**sheet [, **s**sheet]*| **s**sheet_init–sheet_end | **s***]*
+
+>> _interval_arithmetics_, _fallback_value_
+
+>}
 
 ### 3.1.2 Input parameters
 
@@ -26,7 +32,7 @@ interval_arithmetics, fallback_value
 
 ### 3.1.3 Output
 
-rset<*>
+> rset<*>
 
 ### 3.1.4 Semantics
 
@@ -34,43 +40,45 @@ Serves to select data as defined in the DPM model.
 
 ### 3.1.5 Additional constraints
 
-1. Existence of the parameters. The referred table, variable or operation need to be defined in the DPM.
+1. Existence of the parameters. The referred table, _Variable_ or operation need to be defined in the DPM.
 2. Operations need to be defined in the same script.
 3. Rows, columns and sheets need to exist in the table or operation on which they are defined.
-4. When the selection is done at variable level, row, column and sheet parameters cannot exist.
+4. When the selection is done at _Variable_ level, row, column and sheet parameters cannot exist.
 
 ### 3.1.6 Behaviour
 
-Returns a Recordset with the following structure:
+Returns a _Recordset_ with the following structure:
 
-**Key Components:**
-- **DPM-XL**
-  - Row: If the selected table has ordinate rows and more than one row is present in the selection. The name of the Component is "r".
-  - Column: If the selected table has ordinate columns and more than one column is present in the selection. The name of the Component is "c".
-  - Sheet: If the selected table has ordinate sheets and more than one sheet is present in the selection. The name of the Component is "s".
+_Key Components_:
+
+- DPM-XL
+
+  - Row: If the selected table has ordinate rows and more than one row is present in the selection. The name of the _Component_ is "r".
+  - Column: If the selected table has ordinate columns and more than one column is present in the selection. The name of the _Component_ is "c".
+  - Sheet: If the selected table has ordinate sheets and more than one sheet is present in the selection. The name of the _Component_ is "s".
+
 - **DPM-ML**
   - X: If there is Column for DPM-XL.
   - Y: If there is Row for DPM-XL.
   - Z: If there is Sheet for DPM-XL.
-- A DPM Key Component for each Key Variable belonging to the Key associated to the selected Variable. The name of the Component is the Code of the Property associated to the Key Variable. The Data Type of the component shall be the correspondent Data Type of the Metric or Property associated to the respective Key Variable.
+- A DPM _Key Component_ for each _Key Variable_ belonging to the _Key_ associated to the selected _Variable_. The name of the _Component_ is the _Code_ of the _Property_ associated to the _Key Variable_. The _Data Type_ of the _Component_ shall be the correspondent _Data Type_ of the _Metric_ or _Property_ associated to the respective _Key Variable_.
 
-**Fact Component**: With the Data Type corresponding to the selected Variable.
+**Fact Component**: With the _Data Type_ corresponding to the selected _Variable_.
 
-**Attribute Components**: One Component for each Attribute Variable associated to the selected Variable. The name of the Component is the Code of the Property associated to the Attribute Variable. The Data Type of the component shall be the correspondent Data Type of the Metric or Property associated to the respective Attribute Variable.
+**Attribute Components**: One _Component_ for each Attribute _Variable_ associated to the selected _Variable_. The name of the _Component_ is the _Code_ of the _Property_ associated to the _Attribute Variable_. The _Data Type_ of the _Component_ shall be the correspondent _Data Type_ of the _Metric_ or _Property_ associated to the respective _Attribute Variable_.
 
-The Records for the Recordset shall be obtained from the input data according to the selection.
+The _Records_ for the _Recordset_ shall be obtained from the input data according to the selection.
 
 ### 3.1.7 DPM-ML metamodel representation
 
-There is no metamodel representation for the selection operator. It is used to select, in last instance, variables. So the result of the selection are processed to get the relevant variables for DPM-ML, as well as the DefaultValue and UseIntervalArithmetics attributes.
+There is no metamodel representation for the selection operator. It is used to select, in last instance, variables. So the result of the selection are processed to get the relevant variables for DPM-ML, as well as the _DefaultValue_ and _UseIntervalArithmetics_ attributes.
 
 ## 3.2 With
 
 ### 3.2.1 Syntax
 
-```
-with partial_selection: expression
-```
+> **with** partial_selection: _expression_
+
 
 ### 3.2.2 Input parameters
 
