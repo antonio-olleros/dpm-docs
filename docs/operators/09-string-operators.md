@@ -3,15 +3,16 @@
 ## 9.1 Length (len)
 
 ### 9.1.1 Syntax
-```
-len(op)
-```
+
+> **len(** op **)**
 
 ### 9.1.2 Input parameters
-- op: rset | scal <Str>
+
+> op: rset | scal <str\>
 
 ### 9.1.3 Output
-rset | scal <Int>
+
+> rset | scal <int\>
 
 ### 9.1.4 Semantics
 Returns the number of characters of the op string.
@@ -20,25 +21,30 @@ Returns the number of characters of the op string.
 None.
 
 ### 9.1.6 Behaviour
-- Unary operators' standard behaviour.
+
+- [Unary operators' standard behaviour](./02-general-behaviour.md#21-unary-operators).
 
 ### 9.1.7 Examples
-- len("test") results in 4
-- len(NULL) results in NULL
+
+- `len("test")` results in `4`
+- `len(null)` results in `null`
 
 ## 9.2 Concatenate (&)
 
 ### 9.2.1 Syntax
-```
-op1 & op2
-```
+
+> op1 **&** op2
+
 
 ### 9.2.2 Input parameters
-- op1: rset | scal <Str>
-- op2: rset | scal <Str>
+
+> op1: rset | scal <str\>
+
+> op2: rset | scal <str\>
 
 ### 9.2.3 Output
-rset | scal <Str>
+
+> rset | scal <str\>
 
 ### 9.2.4 Semantics
 Concatenates two strings.
@@ -47,8 +53,8 @@ Concatenates two strings.
 None.
 
 ### 9.2.6 Behaviour
-- Binary operators' standard behaviour.
+- [Binary operators' standard behaviour](./02-general-behaviour.md#22-binary-operators).
 
 ### 9.2.7 Examples
-- "hello" & "world" results in "helloworld"
-- "test" & NULL results in NULL
+- `"hello" & "world"` results in `"helloworld"`
+- `"test" & null` results in `null`

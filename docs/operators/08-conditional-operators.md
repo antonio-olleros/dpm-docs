@@ -3,20 +3,24 @@
 ## 8.1 If-then-else
 
 ### 8.1.1 Syntax
-```
-if conditionExpression then thenExpression {else elseExpression}
-```
+
+> **if** conditionExpression **then** thenExpression {**else** elseExpression} **endif**
+
 
 ### 8.1.2 Input parameters
-- conditionExpression: rset | scal <boo>
-- thenExpression: rset | scal <*>
-- elseExpression: rset | scal <*>
+
+> conditionExpression: rset | scal <boo\>
+
+> thenExpression: rset | scal <*>
+
+> elseExpression: rset | scal <*>
 
 ### 8.1.3 Output
-rset | scal <*>
+
+> rset | scal <*>
 
 ### 8.1.4 Semantics
-Returns the thenExpression if the conditionExpression evaluates to true, elseExpression otherwise.
+Returns the thenExpression if the conditionExpression evaluates to `true`, elseExpression otherwise.
 
 ### 8.1.5 Additional constraints
 The thenExpression and ElseExpression must be of the same data type or a compatible one. In case they are not of the same data type, there shall be implicit casting to the common data type, which will be the data type of the result
@@ -56,19 +60,22 @@ If the condition evaluates to null, the elseExpression is returned.
 ## 8.2 Null substitute (nvl)
 
 ### 8.2.1 Syntax
-```
-nvl(op1, op2)
-```
+
+> **nvl(** op1, op2 **)**
+
 
 ### 8.2.2 Input parameters
-- op1: rset | scal <*>
-- op2: rset | scal <*>
+
+> op1: rset | scal <*>
+
+> op2: rset | scal <*>
 
 ### 8.2.3 Output
-rset | scal <*>
+
+> rset | scal <*>
 
 ### 8.2.4 Semantics
-Returns op2 when op1 is null, otherwise op1.
+Returns op2 when op1 is `null`, otherwise op1.
 
 ### 8.2.5 Additional constraints
 op1 and op2 need to be of the same type (scalar or recordset) and same data type.
@@ -76,23 +83,27 @@ op1 and op2 need to be of the same type (scalar or recordset) and same data type
 If op1 and op2 are of the recorset type, they need to have the same data structure.
 
 ### 8.2.6 Behaviour
-- Binary operators' standard behaviour.
+
+[Binary operators' standard behaviour](./02-general-behaviour.md#22-binary-operators).
 
 ### 8.2.7 Examples
 
 ## 8.3 Filter
 
 ### 8.3.1 Syntax
-```
-filter(filteredOp, filteringOp)
-```
+
+> **filter(** filteredOp, filteringOp **)**
+
 
 ### 8.3.2 Input parameters
-- filteredOp: rset <*>
-- filteringOp: rset <bool>
+
+> filteredOp: rset <*>
+
+> filteringOp: rset <bool\>
 
 ### 8.3.3 Output
-rset <*>
+
+> rset <*>
 
 ### 8.3.4 Semantics
 Returns the records of the filteredOp recordset for which their matching record in filteringOp evaluates to true.
