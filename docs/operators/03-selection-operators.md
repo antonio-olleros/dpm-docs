@@ -52,20 +52,20 @@ Returns a _Recordset_ with the following structure:
 _Key Components_:
 
 - DPM-XL
-
   - Row: If the selected table has ordinate rows and more than one row is present in the selection. The name of the _Component_ is "r".
   - Column: If the selected table has ordinate columns and more than one column is present in the selection. The name of the _Component_ is "c".
   - Sheet: If the selected table has ordinate sheets and more than one sheet is present in the selection. The name of the _Component_ is "s".
 
-- **DPM-ML**
+- DPM-ML
   - X: If there is Column for DPM-XL.
   - Y: If there is Row for DPM-XL.
   - Z: If there is Sheet for DPM-XL.
+
 - A DPM _Key Component_ for each _Key Variable_ belonging to the _Key_ associated to the selected _Variable_. The name of the _Component_ is the _Code_ of the _Property_ associated to the _Key Variable_. The _Data Type_ of the _Component_ shall be the correspondent _Data Type_ of the _Metric_ or _Property_ associated to the respective _Key Variable_.
 
-**Fact Component**: With the _Data Type_ corresponding to the selected _Variable_.
+_Fact Component_: With the _Data Type_ corresponding to the selected _Variable_.
 
-**Attribute Components**: One _Component_ for each Attribute _Variable_ associated to the selected _Variable_. The name of the _Component_ is the _Code_ of the _Property_ associated to the _Attribute Variable_. The _Data Type_ of the _Component_ shall be the correspondent _Data Type_ of the _Metric_ or _Property_ associated to the respective _Attribute Variable_.
+_Attribute Components_: One _Component_ for each Attribute _Variable_ associated to the selected _Variable_. The name of the _Component_ is the _Code_ of the _Property_ associated to the _Attribute Variable_. The _Data Type_ of the _Component_ shall be the correspondent _Data Type_ of the _Metric_ or _Property_ associated to the respective _Attribute Variable_.
 
 The _Records_ for the _Recordset_ shall be obtained from the input data according to the selection.
 
