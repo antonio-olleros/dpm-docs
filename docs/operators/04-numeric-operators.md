@@ -273,8 +273,8 @@ Returns the sum of two numbers.
 
 For intervals:
 
-- Centre is calculated as centre(left) + centre(right)
-- Radius is calculated radius(left) + radius(right)
+- Centre is calculated as `centre(left) + centre(right)`
+- Radius is calculated `radius(left) + radius(right)`
 
 #### 4.3.1.5 Additional constraints
 None.
@@ -311,8 +311,8 @@ Returns the difference of two numbers.
 
 For intervals:
 
-- Centre is calculated as centre(left) - centre(right)
-- Radius is calculated radius(left) + radius(right)
+- Centre is calculated as `centre(left) - centre(right)`
+- Radius is calculated `radius(left) + radius(right)`
 
 #### 4.3.2.5 Additional constraints
 None.
@@ -349,8 +349,10 @@ Returns the product of two numbers.
 
 For intervals:
 
-- Centre is calculated as centre(left) * centre(right)
-- Radius is calculated as(centre(left) * radius(right)) + abs(radius(left) * centre(right)) + (radius(left) * radius(right))
+- Centre is calculated as `centre(left) * centre(right)`
+- Radius is calculated as `(centre(left) * radius(right)) + abs(radius(left) * centre(right)) + (radius(left) * radius(right))`
+
+
 
 #### 4.3.3.5 Additional constraints
 None.
