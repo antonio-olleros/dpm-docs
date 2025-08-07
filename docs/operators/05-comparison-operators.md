@@ -22,8 +22,9 @@ The operands for the comparison operations must be of the same type (considering
 
 If any operand is null, then the result is also null.
 
-For comparison operators implying an order (>, >=, <, <=), the following rules apply:
-- Boolean values: True is considered greater than false.
+For comparison operators implying an order (`>`, `>=`, `<`, `<=`), the following rules apply:
+
+- Boolean values: `true` is considered greater than `false`.
 - Strings: Alphabetic order is followed.
 
 ## 5.2 Equal (=)
