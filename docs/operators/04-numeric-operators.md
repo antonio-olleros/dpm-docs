@@ -31,11 +31,11 @@ If the type of operands is _Integer_ then the result has type _Integer_. If any 
 
 #### 4.2.1.2 Input parameters
 
-> Op: rset | scal <num + interval>
+> Op: rset | scal <num + interval\>
 
 #### 4.2.1.3 Output
 
-> rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.2.1.4 Semantics
 Returns the operand unchanged.
@@ -62,11 +62,11 @@ None
 
 #### 4.2.2.2 Input parameters
 
-> Op: rset | scal <num + interval>
+> Op: rset | scal <num + interval\>
 
 #### 4.2.2.3 Output
 
-> rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.2.2.4 Semantics
 Inverts the sign of the operand.
@@ -94,11 +94,11 @@ None
 
 #### 4.2.3.2 Input parameters
 
-> Op: rset | scal <num + interval>
+> Op: rset | scal <num + interval\>
 
 #### 4.2.3.3 Output
 
-> rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.2.3.4 Semantics
 Calculates the absolute value of a number.
@@ -126,7 +126,7 @@ None
 
 #### 4.2.4.2 Input parameters
 
-> Op: rset | scal \<num\>
+> Op: rset | scal <num\>
 
 #### 4.2.4.3 Output
 
@@ -157,11 +157,11 @@ None
 
 #### 4.2.5.2 Input parameters
 
-> Op: rset | scal \<num\>
+> Op: rset | scal <num\>
 
 #### 4.2.5.3 Output
 
-> rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.2.5.4 Semantics
 Calculates the natural logarithm of a number.
@@ -189,11 +189,11 @@ The numeric values must be greater than 0.
 
 #### 4.2.6.2 Input parameters
 
-> Op: rset | scal \<num\>
+> Op: rset | scal <num\>
 
 #### 4.2.6.3 Output
 
-> rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.2.6.4 Semantics
 Calculates the square root of a number.
@@ -221,13 +221,13 @@ The numeric values must be greater than or equal to 0.
 
 #### 4.2.7.2 Input parameters
 
-> op: rset | scal \<num\>
+> op: rset | scal <num\>
 
-> base: scal \<num\>
+> base: scal <num\>
 
 #### 4.2.7.3 Output
 
-> rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.2.7.4 Semantics
 Calculates the logarithm of base op.
@@ -260,13 +260,13 @@ This operators group follows the [General behavior for binary operators](./02-ge
 
 #### 4.3.1.2 Input parameters
 
-> left: rset | scal <num + interval>
+> left: rset | scal <num + interval\>
 
-> right: rset | scal <num + interval>
+> right: rset | scal <num + interval\>
 
 #### 4.3.1.3 Output
 
-> rset | scal <num + interval>
+> rset | scal <num + interval\>
 
 #### 4.3.1.4 Semantics
 Returns the sum of two numbers.
@@ -298,13 +298,13 @@ None.
 
 #### 4.3.2.2 Input parameters
 
-> left: rset | scal <num + interval>
+> left: rset | scal <num + interval\>
 
-> right: rset | scal <num + interval>
+> right: rset | scal <num + interval\>
 
 #### 4.3.2.3 Output
 
-> rset | scal <num + interval>
+> rset | scal <num + interval\>
 
 #### 4.3.2.4 Semantics
 Returns the difference of two numbers.
@@ -336,13 +336,13 @@ None.
 
 #### 4.3.3.2 Input parameters
 
-> left: rset | scal <num + interval>
+> left: rset | scal <num + interval\>
 
-> right: rset | scal <num + interval>
+> right: rset | scal <num + interval\>
 
 #### 4.3.3.3 Output
 
-> rset | scal <num + interval>
+> rset | scal <num + interval\>
 
 #### 4.3.3.4 Semantics
 Returns the product of two numbers.
@@ -374,13 +374,13 @@ None.
 
 #### 4.3.4.2 Input parameters
 
-> num: rset | scal \<num\>
+> num: rset | scal <num\>
 
-> den: rset | scal \<num\>
+> den: rset | scal <num\>
 
 #### 4.3.4.3 Output
 
-> rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.3.4.4 Semantics
 Divides two numbers.
@@ -411,13 +411,13 @@ The denominator must be different to zero.
 
 #### 4.3.5.2 Input parameters
 
-> op1: rset | scal <num + interval>
+> op1: rset | scal <num + interval\>
 
-> op2: rset | scal <num + interval>
+> op2: rset | scal <num + interval\>
 
 #### 4.3.5.3 Output
 
-> rset | scal <num + interval>
+> rset | scal <num + interval\>
 
 #### 4.3.5.4 Semantics
 Calculates the maximum value from a set of operands.
@@ -446,13 +446,13 @@ None.
 
 #### 4.3.6.2 Input parameters
 
-> op1: rset | scal <num + interval>
+> op1: rset | scal <num + interval\>
 
-> op2: rset | scal <num + interval>
+> op2: rset | scal <num + interval\>
 
 #### 4.3.6.3 Output
 
-> rset | scal <num + interval>
+> rset | scal <num + interval\>
 
 #### 4.3.6.4 Semantics
 Calculates the minimum value from a set of operands.
@@ -483,13 +483,13 @@ None.
 
 #### 4.3.7.2 Input parameters
 
->  num: rset | scal \<num\>
+> num: rset | scal <num\>
 
->  den: rset | scal \<num\>
+> den: rset | scal <num\>
 
 #### 4.3.7.3 Output
 
->rset | scal \<num\>
+> rset | scal <num\>
 
 #### 4.3.7.4 Semantics
 Raises the power to the exponent.
