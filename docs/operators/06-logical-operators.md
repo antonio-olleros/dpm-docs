@@ -25,11 +25,11 @@ None.
 
 - [Binary operators' standard behaviour](./02-general-behaviour.md#22-binary-operators).
 
-|        | false {#red} | null {#grey} | true {#green} |
-|--------|------------|-----------|-----------|
-|false {#red}  | false {#red}      | false {#red}     | false {#red}     |
-| null {#grey}   | false {#red}      | null {#grey}      | null {#grey}       |
-| true {#green}   | false {#red}      | null {#grey}      | true {#green}|
+|                | false {#red} | null {#grey} | true {#green} |
+|----------------|--------------|--------------|---------------|
+| false {#red}   | false {#red} | false {#red} | false {#red}  |
+| null {#grey}   | false {#red} | null {#grey} | null {#grey}  |
+| true {#green}  | false {#red} | null {#grey} | true {#green} |
 
 ## 6.2 Disjunction (or)
 
@@ -57,11 +57,11 @@ None.
 
 - [Binary operators' standard behaviour](./02-general-behaviour.md#22-binary-operators).
 
-|        | false {#red} | null {#grey} | true {#green} |
-|--------|------------|-----------|-----------|
-| false {#red}  | false {#red}      | null {#grey}      | true {#green}      |
-| null {#grey}   | null {#grey}       | null {#grey}      | true {#green}      |
-| true {#green}  | true {#green}       | true {#green}      | true {#green}      |
+|                | false {#red} | null {#grey} | true {#green} |
+|----------------|--------------|--------------|---------------|
+| false {#red}   | false {#red} | null {#grey} | true {#green} |
+| null {#grey}   | null {#grey} | null {#grey} | true {#green} |
+| true {#green}  | true {#green} | true {#green} | true {#green} |
 
 ## 6.3 Exclusive disjunction (xor)
 
@@ -90,11 +90,11 @@ None.
 
 - [Binary operators' standard behaviour](./02-general-behaviour.md#22-binary-operators).
 
-|        | false {#red} | null {#grey} | true {#green} |
-|--------|------------|-----------|-----------|
-| false {#red}  | false {#red}      | null {#grey}      | true {#green}      |
-| null {#grey}   | null {#grey}       | null {#grey}      | null {#grey}      |
-| true {#green}   | true {#green}       | null {#grey}      | false {#red}     |
+|                | false {#red} | null {#grey} | true {#green} |
+|----------------|--------------|--------------|---------------|
+| false {#red}   | false {#red} | null {#grey} | true {#green} |
+| null {#grey}   | null {#grey} | null {#grey} | null {#grey}  |
+| true {#green}  | true {#green} | null {#grey} | false {#red} |
 
 ## 6.4 Negation (not)
 
@@ -119,8 +119,8 @@ None.
 ### 6.4.1.6 Behaviour
 - Binary operators' standard behaviour.
 
-| Input {#k} | Result {#k} |
-|------------|-------------|
-| false {#red}      | true {#green}        |
-| null {#grey}       | null {#grey}        |
-| true {#green}       | false {#red}       |
+| Input {#k}     | Result {#k}  |
+|----------------|--------------|
+| false {#red}   | true {#green} |
+| null {#grey}   | null {#grey}  |
+| true {#green}  | false {#red}  |
