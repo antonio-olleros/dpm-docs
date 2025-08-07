@@ -83,6 +83,11 @@ This documentation aims to be comprehensive and self-contained. Each section inc
 
 For the most current information and updates, please refer to the official DPM standards documentation.
 
+
+## Documentation Style Guide
+
+The documentations follows an style guide documented in the [dpm_xl_style_guide file](./dpm_xl_style_guide.md)
+
 ---
 
 !!! tip "Navigation Tip"

@@ -1,4 +1,4 @@
-# 9 String operators
+# 9 String Operators
 
 ## 9.1 Length (len)
 
@@ -6,7 +6,7 @@
 
 > **len(** op **)**
 
-### 9.1.2 Input parameters
+### 9.1.2 Input Parameters
 
 > op: rset | scal <str\>
 
@@ -17,12 +17,12 @@
 ### 9.1.4 Semantics
 Returns the number of characters of the op string.
 
-### 9.1.5 Additional constraints
+### 9.1.5 Additional Constraints
 None.
 
 ### 9.1.6 Behaviour
 
-- [Unary operators' standard behaviour](./02-general-behaviour.md#21-unary-operators).
+- [Unary *Operators'* standard behaviour](./02-general-behaviour.md#21-unary-operators).
 
 ### 9.1.7 Examples
 
@@ -35,8 +35,7 @@ None.
 
 > op1 **&** op2
 
-
-### 9.2.2 Input parameters
+### 9.2.2 Input Parameters
 
 > op1: rset | scal <str\>
 
@@ -49,11 +48,11 @@ None.
 ### 9.2.4 Semantics
 Concatenates two strings.
 
-### 9.2.5 Additional constraints
+### 9.2.5 Additional Constraints
 None.
 
 ### 9.2.6 Behaviour
-- [Binary operators' standard behaviour](./02-general-behaviour.md#22-binary-operators).
+- [Binary *Operators'* standard behaviour](./02-general-behaviour.md#22-binary-operators).
 
 ### 9.2.7 Examples
 - `"hello" & "world"` results in `"helloworld"`

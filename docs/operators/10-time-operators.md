@@ -1,12 +1,12 @@
-# 10 Time operators
+# 10 Time Operators
 
-## 10.1 Time shift
+## 10.1 Time Shift
 
 ### 10.1.1 Syntax
 
 > **time_shift(** op, period, numberPeriods, {var} **)**
 
-### 10.1.2 Input parameters
+### 10.1.2 Input Parameters
 
 > op: rset <*> | scal <date\>
 
@@ -21,10 +21,10 @@
 > rset <*>
 
 ### 10.1.4 Semantics
-Changes the dates of the var component of the recordset op by adding (or subtracting) the numberPeriods of the period type.
+Changes the dates of the var *Component* of the *Recordset* op by adding (or subtracting) the numberPeriods of the period type.
 
-### 10.1.5 Additional constraints
-The component var must belong to the recordset op, and has to be of Time interval type.
+### 10.1.5 Additional Constraints
+The *Component* var must belong to the *Recordset* op, and has to be of Time interval type.
 
 The period must have one of the following values:
 
@@ -36,10 +36,10 @@ The period must have one of the following values:
 - _D_ for day
 
 ### 10.1.6 Behaviour
-Returns a recordset with the same data structure and number of records as the input op. The dates for the component var are modified by adding the numberPeriods (subtracting, if negative) of the period type.
+Returns a *Recordset* with the same data structure and number of *Records* as the input op. The dates for the *Component* var are modified by adding the numberPeriods (subtracting, if negative) of the period type.
 
 ### 10.1.7 Examples
-Considering the following recordset, generated from the selection {tT1, r010-020, c010-020}:
+Considering the following *Recordset*, generated from the selection {tT1, r010-020, c010-020}:
 
 | RefDate {#k} | r {#k} | c {#k} | f {#f} |
 |--------------|--------|--------|--------|

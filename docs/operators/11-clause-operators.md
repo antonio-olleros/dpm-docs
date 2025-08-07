@@ -1,6 +1,6 @@
-# 11 Clause operators
+# 11 Clause Operators
 
-Clause operators serve to perform operations on the DPM key components of recordsets. Use of clause operators with Standard Key Components are not allowed.
+Clause *Operators* serve to perform operations on the DPM *Key Components* of *Recordsets*. Use of clause *Operators* with Standard *Key Components* are not allowed.
 
 ## 11.1 where
 
@@ -8,8 +8,7 @@ Clause operators serve to perform operations on the DPM key components of record
 
 > op **[where** condition **]**
 
-
-### 11.1.2 Input parameters
+### 11.1.2 Input Parameters
 
 > op: rset <*>
 
@@ -20,16 +19,16 @@ Clause operators serve to perform operations on the DPM key components of record
 > rset <*>
 
 ### 11.1.4 Semantics
-Filters a recordset based on the value of a key component.
+Filters a *Recordset* based on the value of a *Key Component*.
 
-### 11.1.5 Additional constraints
-Condition must be a Boolean expression using as input key components of op.
+### 11.1.5 Additional Constraints
+Condition must be a Boolean expression using as input *Key Components* of op.
 
 ### 11.1.6 Behaviour
-Returns a recordset with the same data structure as the input operand, and with the records resulting from the evaluation of the filtering condition. When the condition evaluates to true, the record is kept, otherwise (including null), the record is not kept.
+Returns a *Recordset* with the same data structure as the input *Operand*, and with the *Records* resulting from the evaluation of the filtering condition. When the condition evaluates to true, the *Record* is kept, otherwise (including null), the *Record* is not kept.
 
 ### 11.1.7 Examples
-Considering the following recordset, generated from the selection `{tT1, r010-020}`:
+Considering the following *Recordset*, generated from the selection `{tT1, r010-020}`:
 
 | RefDate {#k} | r {#k} | CNT {#k} | f {#f} |
 |--------------|--------|----------|--------|
@@ -57,8 +56,7 @@ Considering the following recordset, generated from the selection `{tT1, r010-02
 
 > op **[rename** compFrom to compTo **]**
 
-
-### 11.2.2 Input parameters
+### 11.2.2 Input Parameters
 
 > op: rset <*>
 
@@ -71,22 +69,22 @@ Considering the following recordset, generated from the selection `{tT1, r010-02
 > rset <*>
 
 ### 11.2.4 Semantics
-Changes the name of a component.
+Changes the name of a *Component*.
 
-### 11.2.5 Additional constraints
+### 11.2.5 Additional Constraints
 compFrom must belong to op.
 
-compFrom must be a DPM key component (i.e., cannot refer to row, column or sheet).
+compFrom must be a DPM *Key Component* (i.e., cannot refer to row, column or sheet).
 
 compTo name cannot be already used in op.
 
-compTo name cannot be the name of a standard key component ("r", "c" or "s").
+compTo name cannot be the name of a standard *Key Component* ("r", "c" or "s").
 
 ### 11.2.6 Behaviour
-Returns a recordset with the same data structure as the input operand, except the renamed components, which change name. All the records are kept.
+Returns a *Recordset* with the same data structure as the input *Operand*, except the renamed *Components*, which change name. All the *Records* are kept.
 
 ### 11.2.7 Examples
-Considering the following recordset, generated from the selection `{tT1, r010-020}`:
+Considering the following *Recordset*, generated from the selection `{tT1, r010-020}`:
 
 | RefDate {#k} | r {#k} | CNT {#k} | f {#f} |
 |--------------|--------|----------|--------|
@@ -118,7 +116,7 @@ Considering the following recordset, generated from the selection `{tT1, r010-02
 
 > op **[get** component **]**
 
-### 11.3.2 Input parameters
+### 11.3.2 Input Parameters
 
 > op: rset <*>
 
@@ -129,18 +127,18 @@ Considering the following recordset, generated from the selection `{tT1, r010-02
 > rset <*>
 
 ### 11.3.4 Semantics
-Returns a recordset where the fact is the value of one of the key components.
+Returns a *Recordset* where the fact is the value of one of the *Key Components*.
 
-### 11.3.5 Additional constraints
+### 11.3.5 Additional Constraints
 component must belong to op.
 
 ### 11.3.6 Behaviour
-Returns a recordset with the same data structure as the input operand. The fact values the records are substituted for the value of the selected component.
+Returns a *Recordset* with the same data structure as the input *Operand*. The *Fact* values the *Records* are substituted for the value of the selected *Component*.
 
-Records with null fact value will be omitted.
+*Records* with null *Fact* value will be omitted.
 
 ### 11.3.7 Examples
-Considering the following recordset, generated from the selection `{tT1, r010-020}`:
+Considering the following *Recordset*, generated from the selection `{tT1, r010-020}`:
 
 | RefDate {#k} | r {#k} | CNT {#k} | f {#f} |
 |--------------|--------|----------|--------|
